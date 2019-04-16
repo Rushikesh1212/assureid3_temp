@@ -1,0 +1,105 @@
+/*Footer CSS*/
+.footerBackgroundColor{
+  background-color: #171717;
+  padding: 25px 70px 50px 50px;
+}
+.copyrightFooterColor{
+    background-color: #000;
+    color: #FDFDFD;
+    padding: 32px 0;
+}
+.copyrightFooterColor a{
+	color: #FDFDFD;
+}
+.copyrightFooterColor a:hover{
+	color: rgba(255, 255, 255, 0.5);
+}
+.footer-text{
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+    color: #cbc9cf;
+}  
+.footer-text > a{
+    font-size: 12px;
+    color: #cbc9cf;
+}
+.textWidgetSec{
+	color: #FFFFFF;
+    border-bottom: 1px solid #3c3c3c;
+    word-spacing: 3px;
+    letter-spacing: 3px;
+    padding-bottom: 30px;
+    font-weight: 100;
+    margin-bottom: 40px;
+}  
+.ulStyle {
+    color: #7e8082;
+    list-style: none;
+}
+.listStyleSec{
+    color: #cbc9cf;
+	line-height: 24px;
+    margin-bottom: 15px;
+}
+.listStyleSec > i{
+	margin-right: 15px;
+}
+.recentPostText{
+	color: #cbc9cf;
+	margin-bottom: 20px;
+	line-height: 1.45;
+}
+.recentPostText > a{
+	color: #fff;
+}
+.recentPostText > a:hover{
+	text-decoration: underline;	
+}
+.footerImgStyle{
+	height: 100px;
+	margin-bottom: 10px;
+}
+.footerImgStyle > img{
+	max-width: 100%;
+    max-height: 100%;
+}
+.footerImgStyle:nth-child(even){
+	padding-right: 4px;
+} 
+.footerImgStyle:nth-child(odd){
+	padding-left: 4px;
+}
+.footerSymbol{
+	padding: 5px 15px;
+    border-left: 1px solid #464646;
+}
+.footerSymbol:last-child{
+    border-right: : 1px solid #464646;
+}
+/*.footerSymbol > i:before{
+	content: "\f09a";
+}*/
+.disclaimerText{
+    margin-left: 80px;
+    padding-left: 8px;
+}
+.disclaimerText > p{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.disclaimerText > p > small{
+    font-size: 11px;
+}
+.footer-text {
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+    color: #cbc9cf;
+}
+.copyRight {
+    /* margin-left: 7%; */
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+.footerLogo{
+    margin-top: 15%;
+}

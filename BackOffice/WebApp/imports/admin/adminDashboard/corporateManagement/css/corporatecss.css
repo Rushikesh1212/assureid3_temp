@@ -1,0 +1,84 @@
+/*Css for view contract*/
+
+.contractWrap{
+    padding-top: 2%;
+    text-transform: capitalize;
+    padding-bottom: 6%;
+    height: 100px;
+    box-shadow: 0px 0px 5px #aaa;
+}
+.contractWrap h5{
+    font-size: 12px;
+}
+.contractBorder{
+    border: 1px solid #eee;
+}
+.contractWrapPLZero{
+    padding-left:0px; 
+}
+.contractWrapPRZero{
+    padding-right:0px; 
+}
+.editDoc{
+    margin: auto;
+    text-align: center;
+    margin-top: 3%;
+    box-shadow: 0px 0px 5px #aaa;
+    padding: 3%;
+    border: 1px solid #aaa;
+}
+.crossIcon{
+    margin-left: 58%;
+    position: absolute;
+    font-size: 20px;
+    margin-top: -19%;
+    cursor: pointer;
+}
+.addAuthorisedPermission{
+    margin-top:3%!important;
+}
+.activeAccount{
+    height: 15px;
+    width: 16px;
+    border-radius: 40px;
+    margin-right: 5px;
+}
+.actiontd{
+    padding: 0!important;
+    vertical-align: middle;
+}
+.noLRpad{
+    padding-left: 0%!important;
+    padding-right: 0%!important;
+}
+.viewBtn1{
+    margin-right: 5px;
+    cursor: pointer;
+}
+.accessPermissionWrap{box-shadow: 0px 0px 5px #aaa; margin-bottom: 2%;}
+.accessPermissionHead{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 3%;
+    vertical-align: middle;
+    padding: 1%;
+}
+.astrikReq{color:#b92b27;}
+#addCompanyLogo{
+    height: 34px;
+    border: 1px solid #ccc;
+    color: #fff;
+    text-align: center;
+    padding: 6px 0px;
+    background-color: #00c0ef;
+    border-color: #00acd6;
+    cursor: pointer;
+}
+.cursorImage{cursor: pointer;}
+.spocDetails{padding: 15px;background-color: #f6f6f7;}
+.btnBgColor{background: #00b8ff;border: none !important; color: #fff;}
+.btnBgColor:hover{ color: #fff;}
+/*.delIcon{margin-left: -28%;margin-top: -1%;position: absolute;}*/
+.deleteCompanyIcon{cursor: pointer;}
+.commoninputstyle{text-align: right;}
+.serviceNameStyle{text-align: left}

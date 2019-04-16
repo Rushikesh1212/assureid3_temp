@@ -1,0 +1,804 @@
+import React,{Component } from 'react';
+import PropTypes from 'prop-types';
+import {Platform, ScrollView, StyleSheet, Text,
+TouchableOpacity, TextInput, View,  BackHandler, Alert,
+ Image, BackAndroid, findNodeHandle, DrawerLayoutAndroid, Dimensions } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Header, Card, Button, Icon, Avatar} from 'react-native-elements';
+import Meteor, {createContainer} from 'react-native-meteor';
+import SideMenu from 'react-native-side-menu';
+import RNExitApp from 'react-native-exit-app';
+import { TextField } from 'react-native-material-textfield';
+import {RadioGroup, RadioButton} from 'react-native-flexi-radio-button';
+import { DocumentPicker, DocumentPickerUtil } from 'react-native-document-picker';
+import DatePicker from 'react-native-datepicker';
+import { RNS3 } from 'react-native-aws3';
+import { Picker } from 'react-native-picker-dropdown';
+
+import { Dropdown } from 'react-native-material-dropdown';
+
+import Loading from '../../components/Loading/Loading.js';
+import styles from './styles.js';
+import Menu from '../../components/Menu/Menu.js';
+import ProfileNavigation from './ProfileNavigation.js';
+
+class BasicForm extends React.Component {
+  constructor(props){
+    super(props);
+    let name = "";
+    if(this.props.userName)
+      name = "Welcome " + this.props.userName;
+    this.state = {
+      name            :name,
+      isOpen          : false,
+      selectedItem    : 'About',
+      inputFocusColor : '#00b8FF',
+      fontSize        : 14,
+      effectiveDate   : '',
+
+      firstName       : '',
+      lastName        : '',
+      fatherFirstName : '',
+      fatherLastName  : '',
+      motherFirstName : '',
+      motherLastName  : '',
+      spouseFirstName : '',
+      spouseLastName  : '',
+      gender          : '',
+      dateOfBirth     : '',
+      mobileNo        : '',
+      altMobileNo     : '',
+      emailId         : '',
+      altEmailId      : '',
+      typeOfProof     : '',
+    };
+    this.openDrawer  = this.openDrawer.bind(this);
+    this.closeDrawer = this.closeDrawer.bind(this);
+    this.toggle      = this.toggle.bind(this);
+    this.handleView  = this.handleView.bind(this);
+    this.browseFile  = this.browseFile.bind(this);
+
+    this.handleSave  = this.handleSave.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps){
+    console.log("inside basic componentWillReceiveProps.... loading => ",this.props.loading);
+
+    if(nextProps.loading){
+      if(nextProps.userProfileData){
+        this.setState({
+          firstName       : nextProps.userProfileData.firstName,
+          lastName        : nextProps.userProfileData.lastName,
+          fatherFirstName : nextProps.userProfileData.fatherFirstName,
+          fatherLastName  : nextProps.userProfileData.fatherLastName,
+          motherFirstName : nextProps.userProfileData.motherFirstName,
+          motherLastName  : nextProps.userProfileData.motherLastName,
+          spouseFirstName : nextProps.userProfileData.spouseFirstName,
+          spouseLastName  : nextProps.userProfileData.spouseLastName,
+          gender          : nextProps.userProfileData.gender,
+          typeOfProof     : nextProps.userProfileData.proofType,
+          dateOfBirth     : nextProps.userProfileData.dateOfBirth,
+          mobileNo        : nextProps.userProfileData.mobileNo,
+          altMobileNo     : nextProps.userProfileData.altMobileNo,
+          emailId         : nextProps.userProfileData.emailId,
+          altEmailId      : nextProps.userProfileData.altEmailId,
+        });
+      }
+    }
+  }
+
+  componentWillMount(){
+    console.log("insed componentWillMount...............................");
+    console.log("this.props.loading = ",this.props.loading);
+    if(this.props.loading){
+      if(this.props.userProfileData){
+        console.log("inside userProfileData...........")
+        this.setState({
+          firstName       : nextProps.userProfileData.firstName,
+          lastName        : nextProps.userProfileData.lastName,
+          fatherFirstName : nextProps.userProfileData.fatherFirstName,
+          fatherLastName  : nextProps.userProfileData.fatherLastName,
+          motherFirstName : nextProps.userProfileData.motherFirstName,
+          motherLastName  : nextProps.userProfileData.motherLastName,
+          spouseFirstName : nextProps.userProfileData.spouseFirstName,
+          spouseLastName  : nextProps.userProfileData.spouseLastName,
+          gender          : nextProps.userProfileData.gender,
+          typeOfProof     : nextProps.userProfileData.proofType,
+          dateOfBirth     : nextProps.userProfileData.dateOfBirth,
+          mobileNo        : nextProps.userProfileData.mobileNo,
+          altMobileNo     : nextProps.userProfileData.altMobileNo,
+          emailId         : nextProps.userProfileData.emailId,
+          altEmailId      : nextProps.userProfileData.altEmailId,
+        });
+      }
+    }
+  }
+
+  componentDidMount(){
+    console.log("inside componentDidMount.... loading => ",this.props.loading);
+  }
+
+  handleView(){
+    Actions.ViewCustomer();
+  }
+  // componentDidMount(){
+  //   BackHandler.addEventListener('hardwareBackPress',this.androidBackHandler.bind(this));
+  // }
+  // componentWillUnmount() {
+  //   BackHandler.removeEventListener('hardwareBackPress',this.androidBackHandler.bind(this));
+  // }
+  // androidBackHandler(){
+  //   console.log(this.props.navigation.state.routeName );
+  //   if(this.props.navigation.state.routeName != 'ServiceList'){
+  //     this.props.navigation.goBack(null);
+  //     return true;
+  //   }
+  //   return false;
+  // }
+  toggle() {
+    console.log('is open ' + this.state.isOpen);
+    let isOpen = !this.state.isOpen;
+      this.setState({
+        isOpen
+      });
+  }
+
+  updateMenuState(isOpen) {
+    this.setState({ isOpen });
+  }
+
+  onMenuItemSelected = item =>
+    this.setState({
+      isOpen: false,
+      selectedItem: item,
+  });
+
+  handleLogout(){
+    console.log('Logout function!');
+    Meteor.logout();
+    Actions.LogIn();
+  }
+  openDrawer(){
+    console.log('opening drawer!');
+          this.drawer.openDrawer();
+  }
+  closeDrawer(){
+    console.log('opening drawer!');
+          this.drawer.closeDrawer();
+  }
+
+  browseFile(event){
+    event.preventDefault();
+    var id = Meteor.userId();
+    // console.log("id => ",id);
+    var s3Data = this.props.s3Data;
+
+    // console.log("s3Data = ",s3Data);
+
+    DocumentPicker.show({ filetype : [DocumentPickerUtil.images()]},(error,res) => {
+                          // Android
+                          // console.log("Result:: ",res);
+                          var fileName = id+'_'+Date.now()+'_'+res.fileName;
+                          // var fileName = id+'_'+res.fileName;
+                          var fileExt = fileName.split('.').pop();  
+
+                          var file = {
+                            uri   : res.uri,
+                            name  : fileName,
+                            type  : res.type,
+                          }
+                          
+                          // console.log("file obj => ",file);
+                          // console.log("date now => ",Date.now());
+                          // var prooftype    = "employement";
+                          // var proofSubtype = "editEmployementDetails";
+                          const options = {
+                            keyPrefix           : "uploads/",
+                            bucket              : s3Data.bucket,
+                            region              : s3Data.region,
+                            accessKey           : s3Data.key,
+                            secretKey           : s3Data.secret,
+                          }
+
+                          RNS3.put(file, options).then((response) => {
+                            console.log("------------response---------------");
+                            console.log('response: ',response);
+                            if (response.status !== 201)
+                              throw new Error("Failed to upload image to S3");
+                            console.log("=========  response.body  ==================");
+                            console.log(response.body);
+                            console.log("---------  response.body  ------------------");
+                            
+                            var fileLocation = response.body.postResponse.location;
+                            var fileDetails = {
+                              fileName      : fileName,
+                              fileExt       : fileExt,
+                              fileLocation  : fileLocation,
+                            }
+                            // console.log("fileDetails = ",fileDetails);
+
+                            Meteor.call("insertBasicProofDoc",fileDetails,(error,result) =>{
+                              if(error){
+                                console.log(error.reason);
+                                Alert.alert(
+                                  'Error',
+                                )
+                              }else{
+                                console.log("File details saved.");
+                              }
+                            });
+                            /**
+                             * {
+                             *   postResponse: {
+                             *     bucket: "your-bucket",
+                             *     etag : "9f620878e06d28774406017480a59fd4",
+                             *     key: "uploads/image.png",
+                             *     location: "https://your-bucket.s3.amazonaws.com/uploads%2Fimage.png"
+                             *   }
+                             * }
+                             */
+                          }).catch((error) => console.log("Handled Exceptions image ",error));
+
+                        });    
+  }
+
+
+  handleSave = () => {
+    var userId = Meteor.userId();
+    var proofDocumentLink = '';
+
+    var formValues = {
+      'userId'          : userId,
+      'firstName'       : this.state.firstName,
+      'lastName'        : this.state.lastName,
+      'fatherFirstName' : this.state.fatherFirstName,
+      'fatherLastName'  : this.state.fatherLastName,
+      'motherFirstName' : this.state.motherFirstName,
+      'motherLastName'  : this.state.motherLastName,
+      'spouseFirstName' : this.state.spouseFirstName,
+      'spouseLastName'  : this.state.spouseLastName,
+      'gender'          : this.state.gender,
+      'dateOfBirth'     : this.state.dateOfBirth,
+      'mobileNo'        : this.state.mobileNo,
+      'altMobileNo'     : this.state.altMobileNo,
+      'emailId'         : this.state.emailId,
+      'altEmailId'      : this.state.altEmailId,
+      "proofType"       : this.state.typeOfProof.value,
+
+    }
+
+    console.log("basic formValues = ",formValues);
+    // Meteor.call("updateBasicData",userId,formValues,proofDocumentLink, function(error,result){
+    //   if(error){
+    //     console.log(error.reason);
+    //   }else{
+    //     console.log("form submitted....");
+    //     this.props.navigate('StatutoryForm');
+    //   }
+    // }); 
+    Meteor.call("updateBasicData",userId,formValues,proofDocumentLink,(error,result) =>{
+      if(error){
+        console.log(error.reason);
+        Alert.alert(
+          'Error',
+        )
+      }else{
+        console.log("form submitted....");
+        Alert.alert(
+          '','Basic Information has been saved!'
+        )
+        // this.props.navigate('StatutoryForm');
+      }
+    });
+    
+    // console.log("navigation = ",this.props.navigate);
+  }
+
+  // saveBack = () => {
+  //   var userId = Meteor.userId();
+  //   var proofDocumentLink = '';
+
+  //   var formValues = {
+  //     'userId'          : userId,
+  //     'firstName'       : this.state.firstName,
+  //     'lastName'        : this.state.lastName,
+  //     'fatherFirstName' : this.state.fatherFirstName,
+  //     'fatherLastName'  : this.state.fatherLastName,
+  //     'motherFirstName' : this.state.motherFirstName,
+  //     'motherLastName'  : this.state.motherLastName,
+  //     'spouseFirstName' : this.state.spouseFirstName,
+  //     'spouseLastName'  : this.state.spouseLastName,
+  //     'gender'          : this.state.gender,
+  //     'dateOfBirth'     : this.state.dateOfBirth,
+  //     'mobileNo'        : this.state.mobileNo,
+  //     'altMobileNo'     : this.state.altMobileNo,
+  //     'emailId'         : this.state.emailId,
+  //     'altEmailId'      : this.state.altEmailId,
+  //   }
+
+  //   // console.log("basic formValues = ",formValues);
+
+  //   Meteor.call("updateBasicData",userId,formValues,proofDocumentLink,(error,result) =>{
+  //     if(error){
+  //       console.log(error.reason);
+  //       Alert.alert(
+  //         'Error',
+  //       )
+  //     }else{
+  //       // console.log("form submitted....");
+  //       this.props.navigate('ViewProfile');
+  //     }
+  //   });    
+  // }
+
+  removeFile = () => {
+    Meteor.call("removeBasicProof",(error,result) =>{
+      if(error){
+        console.log(error.reason);
+        Alert.alert(
+          'Error',
+        )
+      }else{
+        console.log("File details removed.");
+      }
+    });
+  } 
+
+
+  render(){
+
+    const DeviceWidth = Dimensions.get('window').width;
+
+    var gender = {
+      'male':0, 'female':1, 'other':2,
+    }
+
+    var proofType = [{
+      value : 'Birth Certificate',
+    },{
+      value : 'Aadhar Card',
+    },{
+      value : 'School Leaving Certificate',
+    }];
+    
+    if(this.props.loading){
+    return(
+
+      <ScrollView >
+        <ProfileNavigation prevCount={0} nextCount={6} formName={"Basic"} iconName={"user"} />
+
+        <View style={styles.titleContainer}>
+          <Text style={styles.heading}>BASIC INFORMATION</Text>
+          <View style={styles.headingLine}>
+          </View>
+        </View>
+        <View style={styles.formContainer}>
+
+          <View style={styles.inputWrapper}>
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = 'First Name *'
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+                onChangeText          = {(firstName) => this.setState({firstName})}
+                value                 = {this.state.firstName}
+              />
+            </View>
+
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = 'Last Name *'
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(lastName) => this.setState({lastName})}
+                value                 = {this.state.lastName}
+
+              />
+            </View>
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Father's First Name"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(fatherFirstName) => this.setState({fatherFirstName})}
+                value                 = {this.state.fatherFirstName}
+
+              />
+            </View>
+
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Father's Last Name"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(fatherLastName) => this.setState({fatherLastName})}
+                value                 = {this.state.fatherLastName}
+
+              />
+            </View>
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Mother's First Name"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(motherFirstName) => this.setState({motherFirstName})}
+                value                 = {this.state.motherFirstName}
+
+              />
+            </View>
+
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Mother's Last Name"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(motherLastName) => this.setState({motherLastName})}
+                value                 = {this.state.motherLastName}
+
+              />
+            </View>
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Spouse's First Name"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(spouseFirstName) => this.setState({spouseFirstName})}
+                value                 = {this.state.spouseFirstName}
+
+              />
+            </View>
+
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Spouse's Last Name"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(spouseLastName) => this.setState({spouseLastName})}
+                value                 = {this.state.spouseLastName}
+
+              />
+            </View>
+          </View>
+
+          <View style={[styles.inputWrapper]}>
+
+            <View style={{flex:0.3,backgroundColor:'#fff',justifyContent:'center'}}>
+              <Text>Gender *</Text>
+            </View>
+
+            <RadioGroup
+              size={20}
+              color='#00b8FF'
+              thickness={2}
+              selectedIndex = {gender[this.state.gender]}
+              style={{flex:0.7,flexDirection:'row',justifyContent:"space-around",backgroundColor:'#fff'}}
+              onSelect = {(index,value) => this.setState({'gender':value})}
+            >
+              <RadioButton style={{paddingHorizontal:0}} value={'male'} >
+                <Text>Male</Text>
+              </RadioButton>
+       
+              <RadioButton style={{paddingHorizontal:0}} value={'female'}>
+                <Text>Female</Text>
+              </RadioButton>
+       
+              <RadioButton style={{paddingHorizontal:0}} value={'other'}>
+                <Text>Other</Text>
+              </RadioButton>
+            </RadioGroup>
+
+          </View>
+          
+          <View style={styles.inputWrapper}>
+            <View style={styles.formInputView1}>
+              
+              <Text >Basic Proof Type *</Text>
+              <Dropdown
+                label                 = ''
+                data                  = {proofType}
+                inputContainerStyle   = {styles.dropdownInput}
+                labelHeight           = {9}
+                onChangeText          = {(typeOfProof) => this.setState({typeOfProof})}
+                value                 = {this.state.typeOfProof}
+              />
+              
+            </View>
+
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <View style={styles.formInputView}>
+
+              <Text >Date of Birth *</Text>
+              <DatePicker
+                style                 = {{borderWidth:1,borderColor: '#aaa',width:'100%'}}
+                mode                  = "date"
+                placeholder           = "Select Date"
+                format                = "L"
+                minDate               = "01-01-1960"
+                confirmBtnText        = "Confirm"
+                cancelBtnText         = "Cancel"
+                customStyles          = {{
+                                         dateInput: {
+                                          borderWidth: 0
+                                         }
+                                        }}
+                date                  = {this.state.dateOfBirth}
+                onDateChange          = {(date) => {this.setState({dateOfBirth: date})}}
+
+              />
+            </View>
+
+            <View style={styles.formInputView}>
+              <Text >Proof of Current Address</Text>
+              {this.props.userProfileData.proofOfDocument 
+              ?
+                <View style={{width:'100%',borderWidth:1,borderColor:'#bbb'}}>
+                  <Image
+                      resizeMode="stretch"
+                      source={{uri: this.props.userProfileData.proofOfDocument}} 
+                      style={{ width:'100%', height: 120, zIndex:-1 }}
+                  />
+                  <Icon 
+                    name           = "close" 
+                    type           = "font-awesome"
+                    containerStyle = {{backgroundColor:'#fff',position:'absolute',alignSelf:'flex-end',top:0,borderRightWidth:1,borderColor:'#bbb'}}
+                    onPress        = {this.removeFile}
+                  />   
+                </View>
+              :
+                  <Button
+                    textStyle   = {{textAlign:'center'}}
+                    title       = "Browse"
+                    buttonStyle = {styles.buttonBrowse}
+                    onPress     = {this.browseFile.bind(this)}
+                  />
+              }
+            </View>
+
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Phone No. *"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(mobileNo) => this.setState({mobileNo})}
+                value                 = {this.state.mobileNo}
+
+              />
+            </View>
+
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Alternate Phone No."
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(altMobileNo) => this.setState({altMobileNo})}
+                value                 = {this.state.altMobileNo}
+
+              />
+            </View>
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Email Id *"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(emailId) => this.setState({emailId})}
+                value                 = {this.state.emailId}
+
+              />
+            </View>
+
+            <View style={styles.formInputView}>
+              <TextField
+                label                 = "Alternate Email Id"
+                lineWidth             = {0}
+                tintColor             = {this.state.inputFocusColor}
+                inputContainerPadding = {8}
+                labelHeight           = {18}
+                labelPadding          = {8}
+                keyboardType          = 'default'
+                inputContainerStyle   = {{height:60}}
+                style                 = {styles.inputText}
+                labelTextStyle        = {styles.labelText}
+                activeLineWidth       = {0}
+                fontSize              = {this.state.fontSize}
+                labelFontSize         = {this.state.fontSize}
+
+                onChangeText          = {(altEmailId) => this.setState({altEmailId})}
+                value                 = {this.state.altEmailId}
+
+              />
+            </View>
+          </View>
+
+          <View style={{width:'100%',alignItems:'center'}}>
+            <View style={styles.formInputView}>
+              <Button
+                textStyle   = {{textAlign:'center'}}
+                title       = "Save"
+                buttonStyle = {styles.buttonSubmit}
+                onPress     = {this.handleSave}
+              />
+            </View>
+          </View>
+
+          <View style={{flexDirection:'row'}}>
+            <View style={{flex:0.5}}>
+              <TouchableOpacity style={{flexDirection:'row'}} onPress={()=> this.props.navigate('ViewProfile')}>
+                <Icon name="chevrons-left" type="feather" color="#aaa" />
+                <Text style={{textDecorationLine:'underline'}}>Go to Profile</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={{flex:0.5,alignItems:'flex-end'}}>
+              <TouchableOpacity style={{flexDirection:'row'}} onPress={()=> this.props.navigate('StatutoryForm')}>
+                <Text style={{textDecorationLine:'underline'}}>Go Next</Text>
+                <Icon name="chevrons-right" type="feather" color="#aaa" />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+
+      </ScrollView>
+      
+    );
+    } else {
+      return(<Loading />);
+    }
+  }
+}
+
+export default createContainer((props) => {
+
+  var userId            = Meteor.userId();
+  const postHandle      = Meteor.subscribe('userprofile',userId);
+  const loading         = postHandle.ready();
+  console.log("createContainer loading => ",loading);
+  const userProfileData = Meteor.collection('userProfile').findOne({'userId':userId}) || {};
+  // console.log("userprofile = ",userProfileData);
+
+  const postHandle1     = Meteor.subscribe('projectSettingsPublish');
+  const s3Data          = Meteor.collection('projectSettings').findOne({"_id":"1"});
+
+  return{
+    userProfileData,
+    loading,
+    s3Data,
+  }
+
+}, BasicForm);

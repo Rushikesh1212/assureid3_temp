@@ -1,0 +1,54 @@
+.innerblock {
+    display: block;
+    min-height: 90px;
+    background: #fff;
+    border-radius: 2px;
+    margin-bottom: 15px;
+}
+.bg-blue {
+    background-color: #0073b7 !important;
+}
+
+.iconStyle {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 59px;
+    line-height: 80px;
+}
+.dashboardBackground {
+    background: #ecf0f5!important;
+}
+.innerboxtext { 
+    color: #555;
+    margin-bottom: 2%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left!important;
+    font-size: 15px;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    padding-top: 9%;
+}
+.tableinnetWrap {
+    border-top: 2px solid #00c0ef;
+    height: 303px;
+    overflow: hidden;
+}
+.tableinnetWrap1 {
+    border-top: 2px solid #00c0ef;
+    height: auto;
+    overflow: hidden;
+}
+.tablewrap {padding: 2% 0%;}
+.ticketTableLabel {
+    padding: 2%;
+    color: #444;
+    font-size: 14px;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    text-align: left;
+}

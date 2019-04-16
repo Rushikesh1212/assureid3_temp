@@ -1,0 +1,43 @@
+.blockwrap{
+    /* padding: 12%;
+    text-align: center; */
+    padding: 7% 5%;
+    text-align: center;
+}
+/*.bgOrange{ background: #FF4500;}
+.bgYellow{ background: #F0E68C;}
+.bgLightOrange{ background:#FFA500}
+.bgPGeen{ background:rgb(164, 209, 91)}
+.bgGeen{ background:rgb(164, 189, 123)}
+.bgGreen{background: #28a745;}
+.bgBlue{ background:rgb(39, 248, 255)}
+.bgRed{background: #FF0000;}*/
+.caseHead{
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    background: #eee;
+    padding: 1%;
+}
+.blockwrap1{
+    padding: 13%;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+}
+.statusLabel{
+    font-weight: bold;
+    font-size: 10px;
+    /* padding: 4%; */
+    padding-left: 4%!important;
+    padding-top: 4%;
+    padding-right:0%; 
+    vertical-align: middle;
+}
+.totStatics{font-weight: bold;}
+.Bg-info{background: #17a2b8; color: #fff;}
+.Bg-warning{background: #ffc107; color: #fff;}
+.Bg-primary{background:#007bff; color: #fff;}
+.Bg-danger{background: #dc3545; color: #fff;}
+.Bg-success{background:#28a745;color: #fff; }
+.outerledgerStatusBlock{margin-bottom: 2%;}

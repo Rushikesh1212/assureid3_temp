@@ -1,0 +1,43 @@
+.generationImg{max-width: 100%;}
+.generationHeader{border-bottom: 5px solid;}
+.generationInfo{margin-top: 20px;border: 1px solid;padding: 0px 0px;background-color: #fff;margin-bottom: 20px;}
+/* .generationInfo{background: #5aa746;} */
+.generationTable thead tr {background-color: #b9bed2;}
+/* .generationTable thead tr th{border: 1px solid;border-top: 1px solid!important;} */
+.generationTable thead tr th{border: 1px solid;border-top: 1px solid!important;background: #fff;font-size: 16px;font-weight: bold;}
+.generationTable tbody tr td{border: 1px solid;}
+.orderGenerationwrap{ box-shadow : 0px 0px 5px #aaa;}
+.reportHeaderBoxShadow{margin-top: 60px;margin-bottom: 30px;padding-top: 20px;box-shadow: 1px 1px 15px #000;}
+.reportHeaderBoxShadowQTL{margin-bottom: 30px;padding-top: 20px;box-shadow: 1px 1px 15px #000;}
+.reportGeneratedStatus{text-align: center;padding-top: 80px;}
+.reportGeneratedStatus h3{font-size: 40px;font-weight: bold;}
+.orderinfodiv{padding-bottom: 2%;}
+.pdf-icon{cursor: pointer;color: red;}
+.outerpdficon{padding-top: 2%;}
+.outerpdficonatorder{padding-top: 4%;}
+.reportThumbnail{height: 100px;width: 100%;}
+.reportEndFooter{border-top: 5px solid;padding-top: 2%;padding-bottom: 2%;font-size: 20px;font-weight: bolder;}
+.endReportFooter{color: #2f7ebb;}
+.showLi{list-style: inherit;}
+.orderHeadStyle{margin-left: 2%;} 
+.outerViewPublish{box-shadow: 0px 0px 2px #ccc;border: 1px solid #ccc; margin-bottom: 2%; padding-top: 1%;padding-bottom: 1%;}
+.viewTitle{color: #31a3ff;padding-left: 0;font-size: 15px;font-weight: bold;margin-bottom: 1%;letter-spacing: 1px;cursor:pointer;}
+.publishTitle{font-size: 14px;font-weight: 500;letter-spacing: 1px;}
+.orderprocessIcons {font-size: 55px;margin-left: 3%;color: #31a3ff !important;cursor: pointer;} 
+.orderStatusWrapper{border: 1px solid #000;font-size: 23px;font-weight: bold;letter-spacing: 1px;}
+.reportUserImage{height: 187px;width: 100%; border: 1px solid #000; border-radius: 6px; margin-top:5%}
+.reportLabel{ padding: 2%;background: #bbb;color: #000;font-weight: bold;}
+.valueLabel{padding: 2%;background: #f0f0f0;color: #000;}
+.rowOuterWrap{margin-bottom: 4%;}
+.rightTick{background: #3c763d;color: #fff;}
+/*.text-success{color: #000!important;}
+*/.execTitle{background: rgb(138, 182, 220)!important; font-size: 18px; font-weight: bold; color:#000}
+.execHead{font-weight: bold;font-size: 20px;}
+.reporttableHead{    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    padding: 1% 1%;
+    border: 2px solid;
+    bottom: 0;}
+.execBottomTitle{background: rgb(138, 182, 220)!important; font-size: 15px; font-weight: bold; color:#000}
+.reportGenTable tbody tr td{border: 1px solid #000;}

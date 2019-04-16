@@ -1,0 +1,260 @@
+/*.header-a::after{
+	position: absolute;
+    right: 0;
+    top: 38%;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 9px;
+    content: "\f107";
+    text-rendering: auto;
+}*/
+.header-navbar{
+	border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+	-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.header-a{
+	color: rgba(255, 255, 255, 1);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.header-a > span{
+	padding: 2px;
+	-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.header-ul {
+    margin-right: 0px !important;
+}
+.header-ul > li{
+	padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 2.5%;
+}
+/*.header-ul > li.active > .header-a > span{
+	background-color: #fff;
+	color: #000;
+	border-radius: 2px;
+	-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}*/
+.header-container{
+	/*padding-left: 90px;*/
+	padding-right: 20px;
+}
+.header-name{
+	padding-top: 5px;
+}
+.active.header-a, 
+.header-a:hover{
+	background-color: transparent!important;
+	color: rgba(255, 255, 255, 0.75);
+	cursor: pointer;
+}
+.active.header-a > span, 
+.header-a:hover > span{
+	background-color: #fff;
+	color: #000;
+	border-radius: 2px;
+	-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.header-name:hover{
+	color: rgba(255, 255, 255, 0.75);
+}
+.assureIDlogo{
+    height: 55px;
+    margin-top: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.profileHeader{
+	background-color: #414260;
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+.profileHeaderUl > li > a{
+	padding-top: 15px;
+    padding-bottom: 5px;
+	color: #fff;
+    cursor: pointer;
+}
+.profileHeaderUl > li > a > span{
+	margin-right: 10px;
+}
+.profileHeaderUl img{
+	height: 40px;
+	width: 40px;
+}
+.profileHeaderUl > li > a:hover, .profileHeaderUl > li > a:focus, .profileHeaderUl > li > a:active{
+	background-color: #414260!important;
+	color: #fff!important;
+}
+.profileHeaderUl > li:last-child > a{
+	padding-top: 5px;
+}
+.formHeaderCon{
+	padding-right: 40px;
+}
+.assureIDImg{
+	margin-top: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.userIconImage{
+	height: 30px;
+	width: 30px;
+}
+/*.dropdownInFirstHead{
+	padding-top: 9px !important;
+}*/
+.dropdownInFirstHead > a{
+    color: rgba(255, 255, 255, 1);
+    /* font-size: 13px; */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    padding-top: 9px !important;
+}
+.dropdownInFirstHead > a > span{
+	/*padding: 2px;*/
+	-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.name{
+  vertical-align: center;
+}
+.profileHeaderLi > a{
+    color: rgba(255, 255, 255, 1);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.profileHeaderLi > a > span{
+    padding: 2px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.header-ul > li > a:hover,.header-ul > li > a:active,.header-ul > li > a:focus{
+  color: #fff !important;
+  background: transparent !important;
+}
+.header-navbar .open > a:hover,.header-navbar .open> a:active,.header-navbar .open > a:focus{
+  color: #fff !important;
+  background: transparent !important;
+}
+/*.dropdownMenu >li:hover .dropdownInFirstHead > a{
+  background: transparent !important;
+}*/
+.dropdownMenu{
+	border-radius: 0px;
+    background-color: rgba(0,0,0,0.6);
+    border: 0px;
+    padding: 0px;
+    /*margin-right: 98px;*/
+}
+.dropdownMenu li a{
+	padding: 15px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff!important;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(73, 71, 71, 0.15);
+}
+.dropdownMenu li a:hover{background-color: #000!important;}
+.dropdownInFirstHead > a.dropdown-toggle:hover + ul.dropdownMenu,
+.dropdownInFirstHead:hover > ul.dropdownMenu, ul.dropdownMenu:hover{display: block;}
+.dropdownMenuProfile{
+	border-radius: 0px;
+    background-color: rgba(65,66,96,0.8);
+    border: 0px;
+    padding: 0px;
+    /*margin-right: 98px;*/
+}
+.dropdownMenuProfile li a,.dropdownMenuProfile li a:focus{
+	padding: 15px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff!important;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(73, 71, 71, 0.15);
+    cursor: pointer;
+    background-color: rgba(65,66,96,0.8);
+}
+.dropdownMenu li{cursor: pointer;}
+.dropdownMenuProfile li a:hover{background-color: #414260!important;}
+.profileHeaderLi > a.dropdown-toggle:hover + ul.dropdownMenuProfile,
+.profileHeaderLi:hover > ul.dropdownMenuProfile, ul.dropdownMenuProfile:hover{display: block;}
+.inputSearch{
+    /*width: 60px;*/
+    border: 2px solid #fff;
+    border-radius: 100px;
+    margin-top: 5px;
+    margin-right: 30px;
+    cursor: pointer;
+    padding: 8px 20px!important;
+    background-color: transparent;
+    font-family: FontAwesome,'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #fff;
+    width: auto;
+}
+.inputSearch:focus{outline: none;}
+.inputSearch::placeholder{color: #fff;letter-spacing: 1px}
+.inputSearchWidth{max-width: 60px;transition: max-width 0.3s ease-out;}
+.inputSearch:hover{max-width: inherit;}
+.searchProfile li a{text-decoration: none;font-size: 13px;letter-spacing: 2px;color: #fff!important;font-weight: 700;}
+.searchProfile li{list-style: none;padding: 15px 20px;cursor: pointer;border-bottom: 2px solid rgba(73, 71, 71, 0.15);}
+.searchProfile li:hover{background-color: #414260!important;}
+.searchProfile{position: absolute;z-index: 1;top: 1px;background-color: rgba(65,66,96,0.8);width: 100%;}
+.searchProfileDiv{position: fixed;z-index: 1;top: 70px;display: none;}
+.searchProfileDiv ul{padding-left: 0px;padding-right: 0px;}
+.customBadge{position: absolute;top: 4px;right: 0px;background: #d9534f;}
+.shoppingCart{    color: #4ad1e5;}
+.NOpadding{padding: 0;}
+@media screen and (max-width: 619px) and (min-width: 320px){
+    #navbar{
+        background: #414260;
+    }
+    .formHeaderCon{
+        padding-right: 0;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .assureIDImg{
+        height: 50px;
+    }
+    .searchBlock,.cartBlock{
+        height: 50px;
+    }
+    .cartBlock{
+        padding-top: 3%;
+    }
+    .inputSearch{
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+    .navBarCollapse{
+        width: 75%;
+    }
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+    /*.navBarCollapse{
+        width: 75%;
+    }*/
+}

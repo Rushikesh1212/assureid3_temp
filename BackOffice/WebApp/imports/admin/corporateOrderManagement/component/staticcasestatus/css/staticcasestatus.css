@@ -1,0 +1,27 @@
+.blockwrap{
+    padding: 13%;
+    text-align: center;
+    height: 80px;
+}
+.blockwrap1{
+    padding: 13%;
+    text-align: center;
+    height: 90px;
+    width: 80px;
+}
+/*.bgOrange{ background: #FF4500;}
+.bgYellow{ background: #F0E68C;}
+.bgLightOrange{ background:#FFA500}
+.bgPGeen{ background:rgb(164, 209, 91)}
+.bgGeen{ background:rgb(164, 189, 123)}
+.bgBlue{ background:rgb(39, 248, 255)}*/
+.caseHead{
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+.Bg-info{background: #17a2b8; color: #fff;} 
+.Bg-warning{background: #ffc107; color: #fff;}
+.Bg-primary{background:#007bff; color: #fff; }
+.Bg-danger{background: #dc3545; color: #fff;}
+.Bg-success{background:#28a745; color: #fff; }

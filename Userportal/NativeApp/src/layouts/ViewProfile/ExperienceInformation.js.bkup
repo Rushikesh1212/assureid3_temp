@@ -1,0 +1,208 @@
+import React,{Component } from 'react';
+import PropTypes from 'prop-types';
+import {Platform, ScrollView, StyleSheet, Text,
+TouchableOpacity, TextInput, View,  BackHandler, Alert,
+ Image, BackAndroid, findNodeHandle} from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Header, Card, Button, Icon, Avatar,CheckBox} from 'react-native-elements';
+import Meteor, {createContainer} from 'react-native-meteor';
+import SideMenu from 'react-native-side-menu';
+import RNExitApp from 'react-native-exit-app';
+import { TextField } from 'react-native-material-textfield';
+import { DocumentPicker, DocumentPickerUtil } from 'react-native-document-picker';
+import { RNS3 } from 'react-native-aws3';
+
+import styles from './styles.js';
+
+
+export default class ExperienceInformation extends React.Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      isChecked: false,
+      checked: false,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+
+  handleChange(event){
+    const target = event.target;
+    const value  = target.type === 'checkbox' ? target.checked : target.value;
+    const name   = target.name;
+    this.setState({
+      [name]: event.target.value,
+    });
+  } 
+
+  confirmDelete = (index) => {
+    Alert.alert(
+      '','Do you want to delete this data?',
+      [
+        {text: 'Delete',onPress: ()=>{this.deleteExperience(index)}},
+        {text: 'Cancel'}
+      ]
+    );
+  }
+
+  deleteExperience = (index) =>{
+    Meteor.call("removeEmploymentData",index,(error, result)=>{
+      if (error) {
+       console.log(error.reason);
+      }else{  
+      }
+    });
+  }
+
+
+  render(){
+    var checkboxValue = this.props.checkboxRequired;
+    var employeeData  = (this.props.employeeData) ? this.props.employeeData.filter(Boolean) : [];
+
+    return(
+         <View style={{ flex: 1, backgroundColor: '#FFF',borderWidth:0,padding:0}}>
+            <ScrollView createContainerStyle={{marginBottom: 25,borderWidth:0,margin:0}}>
+                <View>
+                  <View style={{flex:1, flexDirection:'row'}}>
+                    <View style={{flex:1,flexDirection:'row'}}>
+                      <Icon name="briefcase" type="font-awesome" size={15}  color="#00b8ff" />
+                      <Text style={{padding:10,fontWeight: 'bold',color:'#00b8ff'}}>Experience Information</Text>
+                    </View> 
+                    {checkboxValue == false ?
+                        Meteor.userId() == this.props.currentId ?
+                          <View style={{flex:.2, alignItems:'flex-end',marginTop:10}}>
+                            <TouchableOpacity onPress ={()=>this.props.navigate.navigate('EmploymentInfo')}>
+                              <Icon name="plus-square-o" type="font-awesome" size={20}  color="#00b8ff"/>
+                            </TouchableOpacity>
+                          </View>
+                        :
+                        null
+                      :
+                      <View style={{flex:.2,marginTop:10}}>
+                        <View style={{alignItems:'flex-end'}}>
+                          <TouchableOpacity onPress ={()=>this.props.navigate.navigate('EmploymentInfo')}>
+                            <Icon name="plus-square-o" type="font-awesome" size={20}  color="#00b8ff"/>
+                          </TouchableOpacity>
+                        </View>
+                      </View>     
+                    }
+                  </View>
+
+                  {employeeData ?
+                    employeeData.map((employmentDetails, index)=>{
+                      {console.log("employmentDetails = ",employmentDetails)}
+                      return (
+                        <View key={index} style={{flexDirection:'row',flex:1}}>
+                          {checkboxValue == false ?
+                             <Text></Text>
+                            : 
+                             employmentDetails.editStatus == "Block" ?
+                            <View>
+                            </View>
+                             :
+                            <View style={{flex:0.1,marginTop:12}}>
+                              {/*<CheckBox
+                                                              center
+                                                              containerStyle={{ backgroundColor: "transparent", borderWidth: 0}}
+                                                              checkedColor="#54Aff3"
+                                                              checkBoxColor="#54Aff3"
+                                                              // checked={this.state.isChecked}
+                                                              onClick={() => this.props.addDataToParent("Employment : "+employmentDetails.employementId)}
+                                                              value={this.state.checked}
+                                                              // textStyle={{ color: "#54Aff3" }}
+                                                            />*/}
+                              <CheckBox
+                                center
+                                containerStyle={{ backgroundColor: "#ff0", borderWidth: 0}}
+                                checkedColor="#54Aff3"
+                                // checked={checked}
+                                onClick={() => this.props.addDataToParent("Permanent Address : "+permAddress.permanentAddressId)}
+                                checkBoxColor="#54Aff3"
+                                // isChecked={() =>this.setState({ checked: !this.state.checked })}
+                                value={this.state.checked}
+                                // onValueChange={() => this.setState({ checked: !this.state.checked })}
+                                // textStyle={{ color: "#7E7877" }}
+                                />                              
+                            </View>
+                          }
+                        <View style={{flex:1}}>
+                          <Card containerStyle={styles.card}>
+                            <View style={styles.cardHeader}>
+                              <View style={{flexDirection:'row',flex:1}}>
+                                <View style={{flex:.2,marginTop:5}}>
+                                  <Icon name="building-o" type="font-awesome" size={25}  color="#00b8ff" />
+                                </View>
+                                <View style={{flex:.8}}>
+                                  <Text>{employmentDetails.designation}</Text>
+                                  <Text>{employmentDetails.nameOfEmployer}</Text>
+                                  <Text>April 2017 - Present</Text>
+                                </View>
+                                <View style={{flex:.2,alignItems:'flex-end'}}>
+                                    { 
+                                    this.props.currentId ?
+                                    (employmentDetails.editStatus == "Open" || employmentDetails.editStatus == "Reopen") && Meteor.userId() == this.props.currentId ?
+                                      <View style={{flex:.5,flexDirection:'row'}}>
+                                        <View style={{paddingRight:10,marginTop:2}}>
+                                          <TouchableOpacity>
+                                            <Icon name="edit" type="font-awesome" size={20}  color="#00b8ff"/>
+                                          </TouchableOpacity>
+                                        </View>
+                                        <View style={{}}>
+                                          <TouchableOpacity onPress={()=>this.confirmDelete(index)}>
+                                            <Icon name="delete-forever" type="MaterialIcons" size={22}  color="#00b8ff"/>
+                                          </TouchableOpacity>
+                                        </View>
+                                      </View>
+                                      :
+                                      null 
+                                    :
+                                    employmentDetails.editStatus == "Open" || employmentDetails.editStatus == "Reopen" ?
+                                    <View style={{flex:.5,flexDirection:'row'}}>
+                                      <View style={{paddingRight:5,marginTop:2}}>
+                                        <TouchableOpacity>
+                                          <Icon name="edit" type="font-awesome" size={20}  color="#00b8ff"/>
+                                        </TouchableOpacity>
+                                      </View>
+                                      <View style={{}}>
+                                        <TouchableOpacity onPress={()=>this.confirmDelete(index)}>
+                                          <Icon name="delete-forever" type="MaterialIcons" size={22}  color="#00b8ff"/>
+                                        </TouchableOpacity>
+                                      </View>
+                                    </View>
+                                    :
+                                     employmentDetails.editStatus == "Block" ?
+                                      <View>
+                                        <Text>Order No : {employmentDetails.orderNo}</Text>
+                                        <Text>Status   : {employmentDetails.verifiedStatus}</Text>
+                                        <Text>Order Date : </Text>
+                                      </View>
+                                        
+                                      :
+                                      null
+                                  } 
+
+
+                                  </View>
+                              </View>
+                            </View>
+                          </Card>
+                        </View>
+                        </View>
+                      );
+                    })
+                    :
+                    checkboxValue == false ?
+                      Meteor.userId() == this.props.currentId ?
+                        <Text style={{paddingHorizontal:22}}>Please add your Experience Information</Text>
+                      :
+                      <Text style={{paddingHorizontal:22}}>No data available.</Text>
+                    :
+                    <Text style={{paddingHorizontal:22}}>Please add your Experience Information</Text>
+                  }
+                   <View style = {styles.lineStyle} />
+                </View>
+                </ScrollView>
+              </View>
+    );
+  }
+}

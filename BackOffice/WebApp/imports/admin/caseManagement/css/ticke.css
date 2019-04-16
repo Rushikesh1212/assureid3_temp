@@ -1,0 +1,375 @@
+.tickStatWrapper{
+	background: #efefef;
+	font-size: 12px ;
+	color: #666;
+	margin-bottom: 20px;
+	padding-bottom: 2%;
+}
+
+.tickStatWrapper h5{
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.fesubmitouter{
+	
+	margin-left: 2%;
+	margin-top:2%;
+}
+.teammember{
+	margin-right: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.teammemberApprove{
+	padding-left: 2%;
+    padding-right: 2%;
+}
+.tmListWrap{
+  padding: 1%;
+  text-align: center;
+}
+.approvebtn{
+	margin-right: 2%;
+}
+.editdoc{
+  font-size: 15px;
+  padding: 6%;
+  cursor: pointer;
+  border: 1px solid #999;
+}
+.selfallocatedwrap{
+  text-align: center;
+  margin-bottom: 5%;
+}
+.fesubmitbtn{
+  padding: 3%;
+}
+.fesubmitbtn1{
+ padding: 1%;
+}
+.downloadLable{
+    font-size: 14px;
+    padding: 1%;
+	margin-left: 15%
+	
+}
+.acceptrejectwrap{
+	margin-top:2%;
+	margin-bottom: 2%;
+}
+/* .fesubmitbtn {
+	padding: 4%;
+} */
+
+.fesubmitouter1{
+	margin-top:0%!important;
+}
+.selfsubmit{
+	padding: 1%;
+}
+
+.feSubmitbtn{
+	margin-top:12%;
+	padding: 3%;
+	padding: 2%;
+}
+/*=======================Chart Css============*/
+#inflowtickets,
+#totalbusiness{
+  width: 100%;
+  height: 281px!important;
+}
+#customerComplaint{
+	height: 314px;
+}
+.amcharts-export-menu li{
+	padding-top: 22%!important;
+}
+.ticketchartTableLabel{
+	padding-bottom: 6%!important;
+}
+.amcharts-bg{
+  height:347px!important;
+}
+.innerblock1{
+	padding: 1% 12% 16% 12%!important;
+	margin-bottom: 4%;
+}
+.statediv{
+	height: 10px;
+	/* border: 1px solid #aaa; */
+	margin-bottom: 1%;
+}
+.bg-blue{
+background: #00c0ef;
+}
+.bg-red{
+background: #dd4b39;
+}
+.bg-green{
+	background: #00a65a;
+}
+.bg-yellow{
+background: #f39c12;
+}
+.horizontalwrap{
+	text-align: center
+}
+.chartwrapper{
+	margin-bottom: 1%;
+	/* padding: 2%; */
+}
+.finalstatuswrap{
+	text-align: center;
+	margin-bottom: 5%;
+	font-size: 12px;
+}
+.finaldatasubmit{
+	margin-top: 5%;
+}
+.uploadreportTitle{
+	float: left;
+}
+.nodata{
+	text-align: center;
+	font-size: 15px;
+	margin-top:2%;
+}
+.statusTitle{
+	margin-top:2%;
+}
+.bcolor{
+	color: #333;
+}
+.viewbtn:hover{
+	color: #fff;
+}
+.finalApprovewrap{
+	margin-top:2%;
+}
+.docdownload label{
+	font-size: 14px;
+    padding: 1%;
+}
+.reportcommonbtn{
+	margin-right: 2%;
+}
+.docdownload{
+    font-size: 46px;
+    /*padding: 0px 10px;*/
+    text-align: center;
+    color: #ccc;
+    border: 1px solid #aaa;
+    margin-bottom: 2%;
+    padding: 0%!important;
+    cursor: pointer;
+    margin-top:1%
+}
+.error {
+    color: #ff0000!important;
+	font-weight: normal!important;
+	font-size: 15px;
+}
+.starcolor{
+	font-size: 31px;
+    margin-top: -9%;
+    color: #f00;
+    position: absolute;
+}
+.starcolor1{
+	font-size: 31px;
+    margin-top: -1%;
+    color: #f00;
+    position: absolute;
+}
+.statuswcolor{
+	color: #fff!important;
+}
+.viewTitle{
+	color: #555;
+}
+.viewlogo{
+	float: left;
+}
+.documentClose{
+	font-size: 36px;
+    /* background: #f00; */
+    margin-bottom: 3%;
+    padding-top: 0%;
+}
+.documentHead{
+	font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 3%!important;
+}
+.serviceNameonly{
+	padding-left: 4%;
+}
+.tdStatus{
+	padding: 2% 10%;
+    text-align: center;
+    display: block;
+}
+.removePadding{
+	padding-bottom: 0%!important;
+}
+#selectMember{
+	margin-top:3%;
+}
+.hideProgressBar{
+	display: none !important;
+}
+.showProgressBar{
+	display: block!important;
+}
+.noData{
+	text-align: center;
+	font-size: 18px;
+	
+}
+.w300 {
+    width: 300px;
+}
+.noDataButton{
+	width: 42%;
+    height: 35px;
+    transition: 0.3s ease 0s;
+	transform: translateX(26px);
+	margin-right: 4%;
+}
+
+.Correctborder{
+	background-color: rgb(255, 255, 255);
+	color: rgb(40, 175, 228);
+	border: 1px solid #2b9bbc !important;
+}
+.bgSelect{
+	background: #f00;
+}
+.bgNotSelect{
+	background: transparent;
+}
+/* 
+.checkListDiv button{
+	border-radius: 0px;
+    height: 40px;
+    background-color: #00b8ff;
+    border-color: #00b8ff;
+    outline: none;
+} */
+
+.innerChecklisttoteamM{
+	margin-bottom: 4%;
+}
+.correctBtn{
+	margin-top:3%;
+}
+
+/* .info{
+	background-color: #00b8ff!important;
+} */
+
+
+.transparentbg{
+	background: transparent!important;
+	border: 1px solid #00acd6!important;
+	color: #000;
+
+}
+.checkMargin{
+	padding-right: 4%;
+}
+.orderMsg{
+	text-align: center;
+    margin-bottom: 2%;
+    color: #000;
+    margin-top: 2%;
+    font-size: 20px;
+}
+/*order css*/
+.ordertablerowWrap{
+	height: 40px;
+}
+.dispatchtldiv{
+	border: 1px solid #000;
+	/* background: #ff0; */
+	font-size: 10px;
+	height: 50px;
+	margin-bottom: 7%;
+}
+.generatereportbtn{
+	padding: 1%;
+	margin-bottom: 2%;
+}
+.orderpdfimg{
+	height: 50px;
+	/* width: 50px; */
+}
+.orderGenerateReport{
+	background: #00b8ff;
+	font-weight: bold;
+	color: #fff;
+    border: 1px solid #aaa;
+}
+.dispatchtldiv .orderRoleName{
+	padding-top:6%;
+}
+.outerTrwrap{
+	margin-bottom: 1%;
+    padding-top: 1%;
+    margin-top: 0%;
+}
+.trBottom{
+	margin-bottom: 2%;
+	background: #fff;
+	
+}
+.orderTicketHead{
+	padding-bottom: 1%;
+    font-weight: bold;
+    color: #000;
+}
+.orderDownArrow{
+	font-size: 20px;
+    cursor: pointer;
+}
+.tmDropList{
+	margin-top: 4%;
+    margin-right: 4%;
+    margin-bottom: 4%;
+}
+
+.orderticketbg{
+	background: #d03a3a;
+    padding: 3%;
+    color: #fff;
+}
+#adminOrderTicketList td{ 
+	vertical-align: middle!important;
+}
+.tableDatabottom{
+	margin-bottom: 3%;
+}
+.publishTitle{
+	padding: 4%;
+}
+.showHideReasonWrap{display:none;} 
+.showReasonSection{display: block;}
+.rejectReason{margin-top:1%;}
+.otherInfoForm{margin-top:3%;}
+.verifyDocWrap{cursor: pointer;}
+.codecolor{font-size: 10px;margin-top: -1%;color: #f00;position: absolute;}
+.scrRejectBtn{margin-top:33%}
+.ErrorRedText{display:block;color:red}
+.spanReviewRemark{margin-left:4%; display:block;color:red}	
+.SpanLandLineRedBorder {border-color:red}
+
+#FE{
+	display: none;
+}
+#BA{
+	display: none;
+}
+#Self{
+	display: none;
+}

@@ -1,0 +1,627 @@
+.outerInformedBy{padding-top: 2%;padding-bottom: 2%;}
+.outerInformedBy p{font-size: 20px;}
+.outerInputBox{padding-top: 1%;font-size: 15px;}
+.filledByLabel{vertical-align: middle;}
+.outerServicesBlock{padding-top: 3%; padding-left: 0; padding-right: 0;}
+.verificationDataOuter{height: 200px;padding-top: 1%;overflow: hidden;padding-bottom: 1%;}
+.verificationDataOuter:hover{overflow-y: auto;}
+.uploadBtn{
+    background: linear-gradient(to right,#45b7ff 0%,#31a3ff 50%,#31a3ff 50%,#45b7ff 100%) no-repeat scroll right bottom / 210% 100% #31a3ff !important;
+    color: #fff;
+    height: 35px;
+    border-radius: 0px;
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+}
+.uploadBtn:hover{
+  background: linear-gradient(to left,#31a3ff 0%,#45b7ff 50%,#45b7ff 50%,#31a3ff 100%) no-repeat scroll right bottom / 210% 100% #31a3ff !important;
+  color: #fff;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+.uploadBtn:focus, .uploadBtn:active, .uploadBtn:visited{
+  outline: none;
+  color: #fff;
+}
+.deleteDocuments{cursor: pointer;}
+
+/* .empVerification{padding-left: 15px;} */
+.empVerification li + li{margin-left: 0px;}
+.empVerification li a,.empVerification li a:hover,.empVerification li a:focus,
+.empVerification li a:active{background-color: #f6f6f7!important;border-radius: 0px;color: #4a4a4a;padding: 6px;transition: 0.4s;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border: 1px solid #aaa;}
+.empVerification li a.active{background-color: #00b8ff!important; border-radius: 0px!important;color: #fff!important;font-weight: 700;padding: 6px;transition: 0.4s;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border: 1px solid #00b8ff;}
+.empVerifContent{margin-top: 60px;}
+.employeeVerifTable button{width: 15%!important;}
+.employeeVerifTable table tbody tr td:first-child{padding: 5px;} 
+/*.employeeVerifTable table tbody tr td input{height: 40px;width: 100%;padding: 10px;outline: none;}*/
+.bulkEmployeeVerif ul li{text-align: left;list-style: disc;}
+.bulkEmployeeImg{height: 90px;}
+.bulkEmployeeImg img{max-height: 100%;margin-bottom: 1px;}
+.bulkEmployeeImg a{font-size: 13px;color: #00b8ff!important}
+.bulkEmployeeContent{margin-bottom: 50px;margin-top: 30px;background-color: #f6f6f7;padding-top: 20px;padding-bottom: 15px;}
+.bulkEmployeeFile p span, .bulkEmployeeFile p span:hover, .bulkEmployeeFile p span:focus,
+.bulkEmployeeFile p span:active{background-color: #00b8ff;color: #fff;padding: 10px 50px;margin-left: 10px;cursor: pointer;border-radius: 0px;}
+.employeeVerifTable table tbody tr td i.fa-plus{cursor: pointer;}
+.empVerifListTable{margin-top: 15px;font-size: 13px;}
+.empVerifListTable thead tr{background-color: #00b8ff;color: #fff;}
+/*.errorTable{margin-top: 15px;font-size: 13px;}
+.errorTable thead tr{background-color: #00b8ff; color: #444;}
+*//*.bulkEmployeePadding{padding-left: 30px;padding-right: 30px;}*/
+.bulkEmployeePadding{border:1px solid #aaa; padding: 1%;}
+.companyVerifColor{background-color: #fff;}
+.bulkEmpButton{border-radius: 0px!important;width: 180px;margin-top: 20px;}
+.manualEmpVerif{text-align: left;}
+.uniqueCursorPointer{cursor: pointer;}
+#empCheckbox{margin-left: 12px;}
+.verifMarginBotton{margin-bottom: 40px;}
+.notSelectedEmpTable thead tr{background-color: #f6f6f7;color: #4a4a4a;}
+.companyOrderPage{background: #00b8ff;color: #fff;font-weight: 700;}
+.companyOrderMargin{margin-top: 25px;}
+.companyOrderMargin > p{margin-bottom: 0px;}
+.companyViewDiv{margin-top: 90px;}
+.tableDataDiv.bg-danger{color: #fff;font-weight: 700;background-color: #e40b0b;padding: 4px;}
+.tableDataDiv.bg-primary{color: #fff;font-weight: 700;padding: 4px;}
+.tableDataDiv.bg-success{color: #fff;font-weight: 700;background-color: green;padding: 4px;}
+.companyViewTable{margin-top: 40px;font-size: 13px;}
+.companyViewTable1{margin-top: 20px;font-size: 13px;}
+.companyVieworderNo{margin-top: 14px;}
+.companyViewassureID{margin-top: 12px;}
+.companyViewTable thead tr th{background-color: #f0f0f0;}
+.companyViewTable1 thead tr th{background-color: #f0f0f0;}
+.paddingLeftVerif{padding-left: 20px;}
+.companyOrderServiceName{font-weight: bold;}
+.noLRPad {padding-left: 0%!important;padding-right: 0%!important;}
+.orderDownArrow{font-size: 20px; cursor: pointer;}
+.orderpdfimg{height: 50px;}
+.outercandidatereport{padding-top: 2%;padding-bottom: 2%;}
+.wordWrapForTable{word-break: break-all;}
+.companyOrderfont{margin-top: 20px;}
+.collapseTableView{padding-top: 8px;padding-bottom: 8px;/*background-color: #f0f0f0;*/}
+.orderTicketHead{font-weight: bold;padding: 1% 0% 3% 0%; }
+.outerordertablewrap{ margin-bottom: 2%;margin-top: 2%;}
+.orderGenerateReport {background: #00b8ff;font-weight: bold;color: #fff;border: 1px solid #aaa;}
+.generatereportbtn {padding: 1%;margin-bottom: 2%;}
+.downloadPdf{cursor: pointer;}
+.outerViewMoreBlock{background-color: #00b8ff;color: #fff;margin-top: 0px;padding: 10px 0px;letter-spacing: 1px;}
+.outerViewMoreBlockLink{color: #fff!important; cursor: pointer;}
+.bgRed{background: #FF0000;}
+@media screen and (max-width: 619px) and (min-width: 320px){
+  .employeeVerifTable button{
+    width: 100% !important;
+  }
+  .bulkEmployeeImg{
+    margin-bottom: 9%;
+  }
+} 
+.profileImgOuter{
+  /*padding: 1%;*/
+  padding-bottom: 15px;
+  /*padding-top: 15px;*/
+  margin-bottom: 0;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  color: #4a4a4a;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  /*font-size: 13px;*/
+  background-color: #fff;
+  min-height: 372px;
+  margin-bottom: 15px;
+}
+.profileImgOuter > h5{
+  letter-spacing: 1px;
+}
+.profileImg{
+  height: 100px;
+  width: 100px;
+  /*border: 1px solid #ccc;*/
+}
+.activityBlock{
+  margin-bottom: 0;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  color: #4a4a4a; 
+  font-size: 13px; 
+}
+.activityOuter{
+  /*padding-top:15px;*/
+  padding-bottom: 15px;
+  background-color: #fff;
+  min-height: 372px;
+  margin-bottom: 15px;
+}
+.activityBlock > div:first-child > i{
+  color: #00b8ff;
+}
+.activityBlock > div:last-child{
+  text-align: right;
+}
+.activityBlock > div:last-child > a, .activityBlock > div:last-child > a:hover{
+  color: #00b8ff;
+  text-decoration: underline;
+}
+.activityBlock > div:nth-child(2){
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.activityBlock > h5{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+.activityOuter hr{
+  margin-top: 0px;
+  /*padding-right: 35px;*/
+  border-color: #b9bed2;
+  margin-left: 11px;
+}
+.activityOuter > h5{
+  letter-spacing: 1px;
+}
+.companyOuter{
+  margin-bottom: 15px;
+  text-align: left;
+  text-rendering: optimizeLegibility;
+  color: #4c4c4c;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  /*padding-top:15px;*/
+  padding-bottom: 15px;
+  background-color: #fff;
+  min-height: 372px;
+}
+.innerActivityWrapper{
+  padding: 0px;
+  border: 1px solid #999;
+  border-top: 0;
+}
+.verifiactionBlockOuter{
+  padding: 2%;
+  border-left: 1px solid #4c4c4c;
+}
+.verificationBlock{
+  /*padding: 10% 10% 3% 10%;
+  border-top: 3px solid #00b8ff!important;
+  border: 1px solid #e4e7ec;
+  background: #fff;
+  box-shadow: 2px 2px 12px #999;
+  margin-bottom: 10%;
+  height: 140px;*/
+  padding: 0;
+  padding-top: 11%;
+  border-top: 3px solid #00b8ff!important;
+  border: 1px solid #e4e7ec;
+  background: #fff;
+  box-shadow: 2px 2px 12px #999;
+  height: 155px;
+  cursor: pointer;
+}
+.verificationBlock1{
+  /*padding: 10% 10% 3% 10%;
+  border-top: 3px solid #00b8ff!important;
+  border: 1px solid #e4e7ec;
+  background: #fff;
+  box-shadow: 2px 2px 12px #999;
+  margin-bottom: 10%;
+  height: 140px;*/
+  padding: 0;
+  padding-top: 11%;
+  border-top: 3px solid #00b8ff!important;
+  border: 1px solid #e4e7ec;
+  background: #fff;
+  box-shadow: 2px 2px 12px #999;
+  height: 155px;
+  cursor: pointer;
+}
+.outerverificationBlock{
+  overflow: hidden;
+  height: 155px;
+ margin-bottom: 4%;
+}
+.outerverificationBlock1{
+  overflow: hidden;
+  height: 155px;
+ margin-bottom: 4%;
+}
+.iconOuterBlock{
+  text-align: center;
+}
+.iconOuterBlock1{
+  text-align: center;
+}
+.iconOuterBlock i{
+  color: #00b8ff;
+}
+.iconOuterBlock1 i{
+  color: #00b8ff;
+}
+.verificationName{
+   text-rendering: optimizeLegibility;
+    color: #4c4c4c;
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 10%;
+    cursor: pointer;
+    height: 48px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.verificationName1{
+   text-rendering: optimizeLegibility;
+    color: #4c4c4c;
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 10%;
+    cursor: pointer;
+    height: 48px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.verificationName:hover{
+  color: #00b8ff;
+}
+.verificationName1:hover{
+  color: #00b8ff;
+}
+.verificationStatus{
+  text-rendering: optimizeLegibility;
+  color: #00b8ff;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  font-size: 13px;
+  text-align: center;
+  /*padding-top: 10%;*/
+  /*cursor: pointer;*/
+  vertical-align: middle;
+}
+.verificationStatus1{
+  text-rendering: optimizeLegibility;
+  color: #00b8ff;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  font-size: 13px;
+  text-align: center;
+  /*padding-top: 10%;*/
+  /*cursor: pointer;*/
+  vertical-align: middle;
+}
+.orderverificationName{
+  text-rendering: optimizeLegibility;
+  color: #fff;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  font-size: 11px;
+  margin-top: 0;
+  text-align: center;
+  padding-top: 4%;
+  padding-right: 0;
+  padding-left: 0;
+}
+.verificationName p{
+  margin-bottom: 0;
+}
+.outerVideoBlock{
+  padding: 2%;
+}
+.videoProfile{
+  height: 200px;
+  width: 100%;
+}
+.userImg{
+  margin: 6px 0px;
+}
+.userInfo > p{
+  font-size: 13px;
+  color: #414260;
+}
+.userInfo > div > .progress{
+  height: 12px;
+  background-color: #4888a1;
+  margin-bottom: 9px;
+}
+.userInfo > div > h3{
+  margin-top: 13px;
+  color: #00b8ff;
+}
+.userInfo > div > .progress > .progress-bar, .proofDocsProgress > .progress > .progress-bar{
+  background-color: #4888a1;
+  background-image: linear-gradient(45deg, rgba(0, 184, 255, .15) 25%, #00b8ff 25%, #00b8ff 50%, rgba(0, 184, 255, .15) 50%, rgba(0, 184, 255, .15) 75%, #00b8ff 75%, #00b8ff);
+}
+.visitedBlock{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.visitedBlock > div > img{
+  width: 100%;
+  height: 80px;
+}
+.visitedBlock > div{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.viewedBlock > div{
+  font-size: 24px;
+  color: #00b8ff;
+}
+.viewedBlock > p{
+  font-size: 13px;
+}
+.companyOuter > h6{
+  margin-top: 15px;
+  margin-bottom: 8px;  
+}
+.companyOuter > h6 > a, .companyOuter > h6 > a:hover{
+  color: #00b8ff;
+  text-decoration: underline;
+}
+.companyOuter > h5{
+  letter-spacing: 1px;
+}
+.verSerBlock, .newsVerBlock, .placeholderVerBlock{
+  background-color: #fff; 
+  min-height: 372px;
+  margin-bottom: 15px;
+}
+.newsVerBlock > h5, .placeholderVerBlock > h5{
+  padding: 10px 0px;
+  letter-spacing: 1px;
+}
+.landingBlocks > h5{
+  background-color: #00b8ff;
+  color: #fff;
+  margin-top: 0px;
+  padding: 10px 0px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.profileServiceImage{
+  height: 50px;
+  width: 50px;
+}
+.profileServiceImage1{
+  height: 50px;
+  width: 50px;
+}
+/*search input css*/
+.searchInput{
+height: 38px;
+background: #fff;
+border: 2px solid #ccc;
+border-left: 0;
+padding-left: 3%;
+width: 80%;
+padding-right: 5%;
+/* color: #ccc; */
+/* border-radius: 4px; */
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+}
+.searchAddon{
+background: #fff;
+border: 2px solid #ccc;
+border-right: 0;
+color: #ccc;
+}
+.outerSearchInput{
+  padding: 1%;
+  padding-top: 0;
+}
+.searchInputGroup{
+  width: 100%;
+ -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+.searchInput:focus{
+width: 100%;
+}
+.notPurchased{
+  background: #6c757d;
+}
+.alreadyPurchased{
+  background: #28a745;
+}
+.expired{
+  background: #dc3545;
+}
+.consoleServiceBlock{
+  padding-top: 2%;
+    padding-bottom: 3%;
+/*    border-bottom: 1px solid #eee;
+*/}
+.consoleServiceBlock:hover{
+  background: #eee;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px #eee;
+}
+.consoleServiceName{
+   height: 50px;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle; 
+}
+.newReqBtn{
+    background: linear-gradient(to right,#45b7ff 0%,#31a3ff 50%,#31a3ff 50%,#45b7ff 100%) no-repeat scroll right bottom / 210% 100% #31a3ff !important;
+    color: #fff;
+    height: 40px;
+    border-radius: 0px;
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+}
+.newReqBtn:hover{
+  background: linear-gradient(to left,#31a3ff 0%,#45b7ff 50%,#45b7ff 50%,#31a3ff 100%) no-repeat scroll right bottom / 210% 100% #31a3ff !important;
+  color: #fff;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+.newReqBtn:focus, .newReqBtn:active, .newReqBtn:visited{
+  outline: none;
+  color: #fff;
+ }
+ .outerprofileStatusServiceImage{
+  height: 80px;
+ }
+.profileStatusServiceImage{
+  height: 100%;
+  width: 80%;
+}
+.profileStatusServiceImage1{
+  height: 20px;
+  width: 20px;
+}
+.ouetrStatusProfileBlock{
+  height: 30px;
+  background: #00b8ff;
+  padding-top: 2%;
+}
+.ouetrStatusProfileBlock1{
+  height: 30px;
+  background: #00b8ff;
+  padding-top: 2%;
+}
+.ouetrStatusProfileBlock span{
+  vertical-align: middle;
+  color: #fff;
+  padding-left: 0;
+}
+.ouetrStatusProfileBlock1 span{
+  vertical-align: middle;
+  color: #fff;
+  padding-left: 0;
+}
+.orderStatusBlock{
+  height: 90px;
+  padding: 5%;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.orderStatusBlock1{
+  height: 90px;
+  padding: 5%;
+  font-size: 12px;
+  vertical-align: middle;
+}
+.purchaseBlock{
+  height: 30px;
+  background: #00b8ff;
+  color: #fff;
+  padding-top: 2%;
+  cursor: pointer;
+}
+.purchaseBlock1{
+  height: 30px;
+  background: #00b8ff;
+  color: #fff;
+  padding-top: 2%;
+  cursor: pointer;
+}
+.purchaseArrowIcon{
+  vertical-align: middle;
+  padding-left: 2%;
+}
+.purchaseArrowIcon1{
+  vertical-align: middle;
+  padding-left: 2%;
+}
+/* width */
+.latestUpadatesBlock::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+.latestUpadatesBlock::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+}
+/* Handle */
+.latestUpadatesBlock::-webkit-scrollbar-thumb {
+    background: #00b8ff; 
+}
+/* Handle on hover */
+.latestUpadatesBlock::-webkit-scrollbar-thumb:hover {
+    background:#02b6fb; 
+}
+.approved{
+ background: #28a745!important;
+}
+.companyServices{margin-bottom: 20px;}
+.companyOrder{color: #4a4a4a;}
+@media screen and (max-width: 619px) and (min-width: 320px){
+  .outerpaddingForMobile{
+    padding: 0;
+  }
+  .outerProfileBlock{
+    padding-left: 23px;
+  }
+  .outerMargin{
+    margin-top: 4%;
+  }
+  .serviceInfoColumn{
+    text-align: left;
+  }
+  .verSerBlock, .placeholderVerBlock{
+    margin-top: 4%;
+  }
+
+} 
+.inputFiles{
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  margin: 0px;
+  padding: 0px;
+}
+.inputFileUser{
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  margin: 0px;
+  padding: 0px;
+}
+.deleteModal > p{font-weight: 700;font-size: 16px;margin-top: 60px;margin-bottom: 40px;padding-left: 40px;}
+.deleteModal .yesDelete, .deleteModal .yesDelete:hover, .deleteModal .yesDelete:active,
+.deleteModal .yesDelete:focus{
+  border-radius: 0px;
+  height: 40px;
+  background-color: #00b8ff;
+  border-color: #00b8ff;
+  outline: none;
+  color: #fff; 
+}
+.deleteModal .noDelete, .deleteModal .noDelete:hover, .deleteModal .noDelete:active,
+.deleteModal .noDelete:focus{
+  border-radius: 0px;
+  height: 40px;
+  outline: none; 
+  margin-right: 15px;
+  border-color: #e4e7ec;
+  background-color: #e4e7ec;
+  color: #000; 
+}
+.empVerification{ margin-top:4%;}
+.companyDetailsBlock{padding: 1%;height: 152px;  box-shadow: 0px 0px 5px #aaa;margin-bottom: 1%;height: 210px;}
+.corporateDetailsBlock{padding: 1%;box-shadow: 0px 0px 5px #aaa;margin-bottom: 1%;}
+.companyServiceDetailsBlock{ overflow-y: scroll;}
+.docTitle{font-size: 20px}
+.bulkEmployeeDisplayImg { height: 40px;}
+.expandCursor{cursor: pointer}
+.bgColor{background-color:#00b8ff; color:#fff;}
+.candidateReportBlock{border: 1px solid #bbb; text-align: center; padding: 1%;}
+.candidateReportHead{text-align: left; padding-bottom: 2%; font-size: 20px}
+.reportTable{margin-top:2%;}
+.bgColor:hover{color: #fff;}
+.spocTitle{text-align: center;font-weight: bold;}
+.removeBorder{border: 0px !important}
+.basicInfoInner p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
+  margin: 0;
+}
+.noPaddingRight{padding-right: 0;}
+.noPaddingLeft{padding-left: 0;}
+.deoRemark{margin-top:10%;}
+.terminateReason{color: #f00;}

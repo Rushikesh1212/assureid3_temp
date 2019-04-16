@@ -1,0 +1,88 @@
+.uploadBtn{
+    background: linear-gradient(to right,#45b7ff 0%,#31a3ff 50%,#31a3ff 50%,#45b7ff 100%) no-repeat scroll right bottom / 210% 100% #31a3ff !important;
+    color: #fff;
+    height: 35px;
+    border-radius: 0px;
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+}
+.uploadBtn:hover{
+  background: linear-gradient(to left,#31a3ff 0%,#45b7ff 50%,#45b7ff 50%,#31a3ff 100%) no-repeat scroll right bottom / 210% 100% #31a3ff !important;
+  color: #fff;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+.uploadBtn:focus, .uploadBtn:active, .uploadBtn:visited{
+  outline: none;
+  color: #fff;
+}
+.inputCSV{
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  margin: 0px;
+  padding: 0px;
+}
+.inputDocument{
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  margin: 0px;
+  padding: 0px;
+}
+.outerUploadBlock{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.docsThumnail{
+    height: 60px;
+  width: 60px;
+}
+.deleteDocs{
+  cursor: pointer;
+}
+.outerDocsThumnail{
+  padding-top: 3%;
+  padding-bottom: 1%;
+}
+.docsImageReq{height: 150px;}
+.companyZipDocs{
+  height: 26px;
+  width: 26px;
+  float: left;}
+.companyZipDocs ~ span{padding-right: 0px;}
+.outerDocumentUploaded{background: #f6f6f7;padding: 2%;height: 37px;box-shadow: 0px 0px 2px #f6f6f7;}
+.docsFileName{white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
+.uploadbtnWrap{margin-top: 2%}
+.bulkUserContent {
+  margin-top: 30px;
+  background-color: #f6f6f7;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.bulkUserManualContent {
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+.middleIpbox{
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.insructionlabels{
+  color: red;
+  font-size: 13px;
+}
+.tabsContent{border: 1px solid #ddd; margin-bottom: 2%; margin-top: 1%;}
+.formatText{font-size: 12px;}
+.noteDiv{padding: 2%;font-size: 17px;font-weight: bold;color: red;border: 1px solid #ddd;margin-top: 2%;box-shadow: 0px 0px 5px #ddd;text-align: center;}
+.fileNamelabelDiv{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align: left;}
+#loaderDiv1{
+  position: absolute;
+  margin-left: 35%;
+}
+#commoneLoaderDiv{
+  position: absolute;
+  margin-left: 35%;
+}

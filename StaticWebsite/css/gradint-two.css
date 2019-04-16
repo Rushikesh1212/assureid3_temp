@@ -1,0 +1,156 @@
+/* header area start */
+.header_area.sticky {
+	background-image: -moz-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -webkit-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -ms-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+}
+.wellcome_area {
+	background:url(../img/bg-img/slide-bg.jpg) no-repeat center;
+	background-size: cover;
+  background-attachment: fixed;
+}
+.wellcome_area::before{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: -moz-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -webkit-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -ms-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+opacity: .9;
+}
+/* header area end */
+
+
+/* feture area start*/
+#features {
+  background: url(../img/bg-img/features-bg.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#features::before{
+	position: absolute;
+	content: " ";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: -moz-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -webkit-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -ms-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+opacity: .9;
+
+}
+/* feture area end*/
+
+/* subscribe area start*/
+.subscribe-section{
+  background: url(../img/bg-img/newsleaters.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+.subscribe-section::before{
+	position: absolute;
+	content: " ";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: -moz-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -webkit-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -ms-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+opacity: .9;
+
+}
+/* subscribe area end*/
+
+/* subscribe area start*/
+#video_area{
+  background: url(../img/bg-img/video-bg.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+#video_area::before{
+	position: absolute;
+	content: " ";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: -moz-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -webkit-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -ms-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+opacity: .9;
+
+}
+/* subscribe area end*/
+
+/* subscribe area start*/
+#download{
+  background: url(../img/bg-img/newsleaters.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+#download::before{
+	position: absolute;
+	content: " ";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: -moz-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -webkit-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -ms-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+opacity: .9;
+
+}
+/* subscribe area end*/
+
+/* subscribe area start*/
+#statistics{
+  background: url(../img/bg-img/statistics-bg.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+#statistics::before{
+	position: absolute;
+	content: " ";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: -moz-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -webkit-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -ms-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+opacity: .9;
+
+}
+/* subscribe area end*/
+
+/* subscribe area start*/
+.footer-contact-area{
+  background: url(../img/bg-img/contact.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+.footer-contact-area::before{
+	position: absolute;
+	content: " ";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: -moz-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -webkit-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+	background-image: -ms-linear-gradient( -29deg, rgb(0, 0, 0) 0%, rgb(0, 175, 255) 100%);
+opacity: .9;
+
+}
+/* subscribe area end*/

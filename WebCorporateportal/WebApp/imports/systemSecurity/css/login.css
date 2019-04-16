@@ -1,0 +1,191 @@
+/*login form css*/
+.logoWrapper h2 {
+    font-size: 18px;
+    word-spacing: 3px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #4c4c4c;
+    text-align: center;
+}
+.addons {
+    border-radius: 0px;
+    border-right: 0px;
+    color: #b9bed2!important;
+    background-color: #f6f6f7;
+    border: 1px solid #b9bed2;
+}
+#login > .form-group{
+    margin-top: 20px;
+}
+.bottomLiksOuter {
+    margin-top: 5%;
+}
+.keepmeloginOuter {
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+    color: #4c4c4c;
+    margin-top: 5px;
+}
+.submitButtonWrapper {
+    margin-top: 4%;
+}
+.input-effect{
+  position: relative; /* necessary to give position: relative to parent. */
+}
+.input-effect input[type="text"],input[type="tel"]{
+  font: 15px/24px "Lato", Arial, sans-serif;
+  color: #4a4a4a;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  border-radius: 0px;
+}
+input[type="tel"]{
+  border-left: 1px solid #b9bed2;
+}
+.effect-21.form-control[disabled]{
+  background-color: #f6f6f7;
+}
+.effect-21{
+  color: #4a4a4a;
+  border: 1px solid #b9bed2; 
+  /*padding: 7px 14px; */
+  padding-left: 9px;
+  transition: 0.4s; 
+  height: 40px;
+  border-left: 0px;
+  background-color: #f6f6f7;
+  /*margin-left: -1px;*/
+  z-index: 0!important; 
+  box-shadow: none;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+.effect-21:focus{box-shadow: none;}
+.effect-21.error{color: #e40b0b;}
+.effect-21.error ~ .focus-border:before, 
+.effect-21.error ~ .focus-border:after{ background-color: #e40b0b!important; }
+.effect-21 ~ .focus-border:before,
+.effect-21 ~ .focus-border:after{
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  width: 0; 
+  height: 1px; 
+  background-color: #00b8FF;
+  transition: 0.2s; 
+  transition-delay: 0.2s;
+  z-index: 4;
+}
+.effect-21 ~ .focus-border:after{
+  top: auto; 
+  bottom: 0; 
+  right: auto; 
+  left: 0; 
+  transition-delay: 0.6s;
+}
+.effect-21.error ~ .focus-border i:before,
+.effect-21.error ~ .focus-border i:after{ background-color: #e40b0b; }
+.effect-21 ~ .focus-border i:before,
+.effect-21 ~ .focus-border i:after{
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 1px; 
+  height: 0; 
+  background-color: #00b8ff; 
+  transition: 0.2s;
+}
+.effect-21 ~ .focus-border i:after{
+  left: auto; 
+  right: 0; 
+  top: auto; 
+  bottom: 0; 
+  transition-delay: 0.4s;
+}
+.effect-21:focus ~ .focus-border:before,
+.effect-21:focus ~ .focus-border:after,
+.has-content.effect-21 ~ .focus-border:before,
+.has-content.effect-21 ~ .focus-border:after{
+  width: 100%; 
+  transition: 0.2s; 
+  transition-delay: 0.6s;
+  z-index: 4;
+}
+.effect-21:focus ~ .focus-border:after,
+.has-content.effect-21 ~ .focus-border:after{
+  transition-delay: 0.2s;
+}
+.effect-21:focus ~ .focus-border i:before,
+.effect-21:focus ~ .focus-border i:after,
+.has-content.effect-21 ~ .focus-border i:before,
+.has-content.effect-21 ~ .focus-border i:after{
+  height: 100%; 
+  transition: 0.2s;
+}
+.effect-21:focus ~ .focus-border i:after,
+.has-content.effect-21 ~ .focus-border i:after{
+  transition-delay: 0.4s;
+}
+.effect-21:focus ~ .addons,
+.has-content.effect-21 ~ .addons{
+  color : #00b8FF;
+}
+.effect-21 ~ label{
+  position: absolute;
+  left: 0px;
+  padding-left: 45px;
+  width: 100%;
+  top: 10px;
+  font-size: 13px;
+  color: #4a4a4a;
+  transition: 0.3s;
+  z-index: 4;
+  letter-spacing: 0.5px;
+  font-weight: 100;
+  pointer-events: none;
+}
+.intl-tel-input ~ label{
+  position: absolute;
+  left: 0px;
+  padding-left: 15px;
+  width: 100%;
+  top: -20px;
+  font-size: 13px;
+  color: #4a4a4a;
+  transition: 0.3s;
+  z-index: 4;
+  letter-spacing: 0.5px;
+  font-weight: 100;
+  pointer-events: none;
+}
+input[type="date"].effect-21 ~ label, select.effect-21 ~ label{
+  top: -20px;
+  padding-left: 0px!important;
+}
+.effect-21:focus ~ label, .has-content.effect-21 ~ label{
+  top: -20px;
+  left: 0px;
+  /*font-size: 12px;*/
+  color: #0a8fc4;
+  transition: 0.3s;
+  padding-left: 0px!important;
+  /*display: block!important;*/
+  /*font-weight: 700;*/
+}
+.effect-21:not(:focus):valid ~ label, .has-content.effect-21 ~ label{
+  /*top: -27px;
+  left: 0;
+  font-size: 16px;
+  color: #333;*/
+  transition: 0.3s;
+}
+.error ~ label{top:-20px!important;padding-left: 0px!important;}
+.error ~ label.error{color: red!important; top:42px!important;padding-left: 0px!important;}
+.loginPageLogo{
+    height: 100px;
+}
+

@@ -1,0 +1,22 @@
+.contractTable thead tr th{background-color: #414260!important;color: #fff!important;opacity: 0.4!important;} 
+.contractWrap {
+    padding-top: 2%;
+    text-transform: capitalize;
+    padding-bottom: 6%;
+    height: 100px;
+    box-shadow: 0px 0px 5px #aaa;
+}
+.contractWrapPLZero {
+    padding-left: 0px;
+}
+.contractBorder {
+    border: 1px solid #eee;
+}
+.contractWrapPRZero {
+    padding-right: 0px;
+}
+.fileIcon{
+  color: #00b8ff;
+}
+.viewBtn{color: #00b8ff;}
+.btnBgColor{background: #00b8ff;border: none !important; color: #fff;}

@@ -1,0 +1,141 @@
+.outerOrderBlock{
+	background: #f0f0f0;
+  padding: 4%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  height:175px;
+  box-shadow: 0px 0px 4px #eee;
+  /*cursor: pointer;*/
+}
+.orderImage{
+  height: 90px;
+  width: 90px;
+}   
+.orderInformation{
+  padding-right: 0;
+}
+.orderInformation h5{
+ text-rendering: optimizeLegibility;
+  color: #4a4a4a;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 0px;
+} 
+.orderInformation p{
+ text-rendering: optimizeLegibility;
+  color: #4a4a4a;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 17px;
+  font-weight: 700;
+}
+.orderDateLabel{
+	text-rendering: optimizeLegibility;
+  color: #4a4a4a;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.orderDateValue{
+	text-rendering: optimizeLegibility;
+  color: #4a4a4a;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: 100;
+  padding: 2%;
+}
+.innerorderInformation{
+	/*height: 88px;*/
+}
+.outerOrderImageBlock{
+padding-left: 0;
+text-align: center;
+}
+.orderHeading{
+  padding-bottom: 1%;
+ border-bottom: 1px solid #ddd;
+}
+.orderHeading h5{
+  text-rendering: optimizeLegibility;
+  color: #4a4a4a;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.orderHeading p{
+  text-rendering: optimizeLegibility;
+  color: #4a4a4a;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.orderBody h5{
+  text-rendering: optimizeLegibility;
+  color: #4a4a4a;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.orderLabel{
+ font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+.orderValue{
+  font-size: 14px;
+  font-weight: bold;
+}
+.innerOrderBody{
+  padding-top: 1%;
+   padding-bottom: 3%;
+}
+.downloadOrederButtons{
+  font-size: 16px;
+  color: #0084bf;
+ cursor: pointer;
+}
+.orderStatusView{
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+.notpurchaseorderStatusView{
+  background: #de5151;
+}
+.orderViewLabel{
+  float: left;
+}
+.paymentbtn{
+  margin-top:4%!important;
+}
+.makepaymentbtn{
+  margin-top:5%;
+}
+/*color classes for status*/
+.greenColorDiv{
+  background: #00ff00;
+}
+.orangeColorDiv{
+  background: #FF7F50;
+}
+.amberColorDiv{
+  background: #FFBF00;
+}
+.redColorDiv{
+  background: #f64444;
+}
+.blackColorDiv{
+  background: #999999;
+}
+.outercompanyOrders{
+  margin-bottom: 1%;
+  margin-top: 1%;
+  font-size: 13px;
+}

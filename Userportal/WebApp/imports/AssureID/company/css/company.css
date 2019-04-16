@@ -1,0 +1,65 @@
+
+.empVerification{padding-left: 15px;}
+.empVerification li + li{margin-left: 0px;}
+.empVerification li a,.empVerification li a:hover,.empVerification li a:focus,
+.empVerification li a:active{background-color: #f6f6f7!important;border-radius: 0px;color: #4a4a4a;padding: 6px;transition: 0.4s;}
+.empVerification li a.active{background-color: #00b8ff!important; border-radius: 0px!important;color: #fff!important;font-weight: 700;padding: 6px;transition: 0.4s;}
+.empVerifContent{margin-top: 60px;}
+.employeeVerifTable button{width: 15%!important;}
+.employeeVerifTable table tbody tr td:first-child{padding: 5px;}
+/*.employeeVerifTable table tbody tr td input{height: 40px;width: 100%;padding: 10px;outline: none;}*/
+.bulkEmployeeVerif ul li{text-align: left;list-style: disc;}
+.bulkEmployeeImg{height: 90px;}
+.bulkEmployeeImg img{max-height: 100%;margin-bottom: 1px;}
+.bulkEmployeeImg a{font-size: 13px;color: #00b8ff!important}
+.bulkEmployeeContent{/*margin-bottom: 50px;*/margin-top: 30px;background-color: #f6f6f7;padding-top: 20px;padding-bottom: 15px;}
+.bulkEmployeeFile p span, .bulkEmployeeFile p span:hover, .bulkEmployeeFile p span:focus,
+.bulkEmployeeFile p span:active{background-color: #00b8ff;color: #fff;padding: 10px 50px;margin-left: 10px;cursor: pointer;border-radius: 0px;}
+.employeeVerifTable table tbody tr td i.fa-plus{cursor: pointer;}
+.empVerifListTable{margin-top: 15px;font-size: 13px;}
+.empVerifListTable thead tr{background-color: #00b8ff;color: #fff;}
+/*.bulkEmployeePadding{padding-left: 30px;padding-right: 30px;}*/
+.companyVerifColor{background-color: #fff;}
+.bulkEmpButton{border-radius: 0px!important;width: 180px;margin-top: 20px;}
+.manualEmpVerif{text-align: left;}
+.uniqueCursorPointer{cursor: pointer;}
+#empCheckbox{margin-left: 12px;}
+.verifMarginBotton{margin-bottom: 40px;}
+.notSelectedEmpTable thead tr{background-color: #f6f6f7;color: #4a4a4a;}
+.companyOrderPage{background: #00b8ff;color: #fff;font-weight: 700;}
+.companyOrderMargin{margin-top: 25px;}
+.companyOrderMargin > p{margin-bottom: 0px;}
+.companyViewDiv{margin-top: 90px;}
+.tableDataDiv.bg-danger{color: #fff;font-weight: 700;background-color: #e40b0b;padding: 4px;}
+.tableDataDiv.bg-primary{color: #fff;font-weight: 700;padding: 4px;}
+.tableDataDiv.bg-success{color: #fff;font-weight: 700;background-color: green;padding: 4px;}
+.companyViewTable{margin-top: 40px;font-size: 13px;}
+.companyViewTable1{margin-top: 20px;font-size: 13px;}
+.companyVieworderNo{margin-top: 14px;}
+.companyViewassureID{margin-top: 12px;}
+/*.companyViewTable thead tr th{background-color: #f0f0f0;}*/
+.companyViewTable1 thead tr th{background-color: #f0f0f0;}
+.paddingLeftVerif{padding-left: 20px;}
+.companyOrderServiceName{font-weight: bold;}
+.noLRPad {padding-left: 0%!important;padding-right: 0%!important;}
+.orderDownArrow{font-size: 20px; cursor: pointer;}
+.orderpdfimg{height: 50px;}
+.outercandidatereport{padding-top: 2%;padding-bottom: 2%;}
+.wordWrapForTable{word-break: break-all;}
+.companyOrderfont{margin-top: 20px;}
+.collapseTableView{padding-top: 8px;padding-bottom: 8px;/*background-color: #f0f0f0;*/}
+.orderTicketHead{font-weight: bold;padding: 1% 0% 3% 0%; }
+.outerordertablewrap{ margin-bottom: 2%;margin-top: 2%;}
+.orderGenerateReport {background: #00b8ff;font-weight: bold;color: #fff;border: 1px solid #aaa;}
+.generatereportbtn {padding: 1%;margin-bottom: 2%;}
+.downloadPdf{cursor: pointer;}
+.outerViewMoreBlock{background-color: #00b8ff;color: #fff;margin-top: 0px;padding: 10px 0px;letter-spacing: 1px;}
+.outerViewMoreBlockLink{color: #fff!important; cursor: pointer;}
+@media screen and (max-width: 619px) and (min-width: 320px){
+	.employeeVerifTable button{
+		width: 100% !important;
+	}
+	.bulkEmployeeImg{
+		margin-bottom: 9%;
+	}
+}
