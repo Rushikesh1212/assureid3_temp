@@ -346,7 +346,7 @@ OrderAllocatedToDispatchTeamContainer = withTracker(props => {
                     tempData.finalStatus = 'WIP';
                     tempData.bgClassName = 'btn-warning';
                     break;
-                }
+                } 
               
               tempData.ticketDetails = [];
               if (allOrderList[i].candidateDetails[j].verificationData) {

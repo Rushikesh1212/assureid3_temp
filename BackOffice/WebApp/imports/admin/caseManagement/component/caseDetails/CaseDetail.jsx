@@ -1744,7 +1744,7 @@ class CaseDetail extends TrackerReact(Component){
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 outerClickHere noLRPad">
                                      <p className="clickHereforseemore" data-toggle="collapse" data-target="#moreActivities">Click here to see more >></p>
                                        <div id="moreActivities" className="collapse">
-                                        {this.props.getTicket.ticketElement.slice(2).reverse().map((element,i)=>{
+                                        {this.props.getTicket.ticketElement.reverse().splice(2).map((element,i)=>{
                                             return (
                                               <div key={i} className="col-lg-12 col-md-12 col-sm-12 col-xs-12 tickStatWrapper">
                                                 <h5> {element.role} </h5>
@@ -1816,7 +1816,8 @@ export default CaseDetailContainer = withTracker(props => {
   var getTicket = TicketMaster.findOne({"_id":ticketId}) ;
   var loginUserID = Meteor.userId();
   var loggedInUser = Meteor.users.findOne({"_id":loginUserID});
-  
+  var firsttwoElements = [];
+  var excludingtwoEle  = [];
   if(getTicket){
     
     var user = Meteor.users.findOne({"_id": getTicket.userId});
@@ -1904,6 +1905,7 @@ export default CaseDetailContainer = withTracker(props => {
               }
           }
       }
+     
     //------------------------------------------------------------------------------
   }   
   

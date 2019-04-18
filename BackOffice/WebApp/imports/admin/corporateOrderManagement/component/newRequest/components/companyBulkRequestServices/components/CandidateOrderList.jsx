@@ -222,7 +222,7 @@ class CandidateOrderList extends TrackerReact(Component) {
         // console.log("verificationid",verificationid);
         var ext       = fileName.split('.').pop();
         console.log("ext",ext);
-        if(ext=="jpg" || ext=="png" || ext=="jpeg"){
+        if(ext=="jpg" || ext=="png" || ext=="jpeg" || ext=="JPG" || ext=="PNG" || ext=="JPEG" ){
           if (verificationid && prooftype) {
             addProofToS3Function(userId,file,prooftype,proofSubtype,dataIndex,orderId,proofTypeName,verificationid,self);                       
             event.currentTarget.value = null;
@@ -256,7 +256,7 @@ class CandidateOrderList extends TrackerReact(Component) {
         var prooftype = $(event.currentTarget).attr('data-prooftype');
         var ext       = fileName.split('.').pop();
         var data = {
-         "prooftype" : prooftype,
+         "prooftype"    : prooftype,
          "proofSubtype" : proofSubtype,
          "dataIndex"    : dataIndex,
          "orderId"      : orderId,
@@ -264,7 +264,7 @@ class CandidateOrderList extends TrackerReact(Component) {
          "carNo"        : carNo,
         }
         console.log("data",data);
-        if(ext=="jpg" || ext=="png" || ext=="jpeg"){
+        if(ext=="jpg" || ext=="png" || ext=="jpeg" || ext=="JPG" || ext=="PNG" || ext=="JPEG"){
           if (prooftype) {
             addIdentityProofToS3Function(userId,file,data,self);                       
           }else{

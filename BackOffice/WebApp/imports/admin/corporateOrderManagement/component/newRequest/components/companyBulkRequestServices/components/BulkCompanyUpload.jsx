@@ -37,7 +37,6 @@ export default class BulkCompanyUpload extends TrackerReact(Component) {
   }
   uploadCSV(event){
     event.preventDefault();    
-
     this.setState({
       [`serviceid-${this.props.serviceid}`] : event.target.value,
     },()=>{
@@ -85,7 +84,13 @@ export default class BulkCompanyUpload extends TrackerReact(Component) {
                     swal("It seams there is no data to process.");
                   }else if(result.candidateNotListed.count > 0){
                     swal("Candidate in the Row "+result.candidateNotListed.notListed+" is not listed in the order. Please check the details of the candidate and upload next time");
+                  }else{
+                    ref.props.updatefunctionfailedList([]);
+                    ref.setState({"failedList" : []});
                   }
+                  // this.setState({
+                  //    "failedList"     : [],
+                  // });
                  
                 }
               }
@@ -186,6 +191,7 @@ export default class BulkCompanyUpload extends TrackerReact(Component) {
   }
 
   render() {
+    console.log("failedList",this.state.failedList);
     if(Meteor.userId()) 
     return (
       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 bulkEmployeePadding">

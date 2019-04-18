@@ -62,17 +62,13 @@ export default class ResetPassword extends TrackerReact(React.Component){
             Meteor.logout();
             $('#ResetBlock').hide();
             $('#outerLoginWrapper').show();
-
-            swal({
-              title: "Correct",
-              text: 'Password has been changed successfully',
-              showConfirmButton: true,
-              showCancelButton: false,
-              confirmButtonColor: '#666',
-              type: 'error'
+             swal({
+              title: "Password Reset",
+              text: "Password has been changed successfully!!",
+              timer: 3000,
+              showConfirmButton: false,
+              type: "success"
             });
-            // swal("Password has been changed successfully!!");
-            
           }
         });
       }
@@ -101,7 +97,7 @@ export default class ResetPassword extends TrackerReact(React.Component){
       <div className="" id="ResetBlock">
         <div className="row">
           <div className="logoWrapper col-lg-6 col-lg-offset-3 col-md-12 col-md-offset-4 col-sm-12 col-sm-offset-4 col-xs-4 col-xs-offset-4">
-            <img src="https://s3.ap-south-1.amazonaws.com/assureidportal/backofficeImages/AssureIDlogo.png" className="loginPageLogo"  alt="AssureID logo"/> 
+            <img src="https://s3.ap-south-1.amazonaws.com/assureidportal/websiteImgs/AssureIDlogo.png" className="loginPageLogo"  alt="AssureID logo"/> 
             <h2>Reset Password</h2>
           </div>
           <div className="FormWrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">

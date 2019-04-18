@@ -27,8 +27,12 @@ export default class Login extends TrackerReact(Component) {
         }
       }
     });
-
+    console.log("loginusername",this.state.loginusername);
+    console.log("loginPassword",this.state.loginPassword);
     $("body").removeClass('adminLte');
+    // $("#loginusername").focus();
+    // $("#loginPassword").focus();
+
   }
 
   userlogin(event){
@@ -175,6 +179,9 @@ export default class Login extends TrackerReact(Component) {
   }
 
 	render() {
+    console.log("loginusername in render",this.state.loginusername);
+    console.log("loginPassword in render",this.state.loginPassword);
+
     return (
     	<div>
   	   <div className="modal fade in" id="loginModal" role="dialog">
@@ -189,11 +196,11 @@ export default class Login extends TrackerReact(Component) {
                       <h2>Sign In</h2>
                     </div>
                     <div className="FormWrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <form className="" id="login" onSubmit={this.userlogin.bind(this)}>
+                      <form className="" id="login" autoComplete="off" onSubmit={this.userlogin.bind(this)}>
                         <div className="form-group col-lg-12 col-md-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div className="input-effect input-group">
                             <span className="input-group-addon addons" id="basic-addon1"><i className="fa fa-user" aria-hidden="true"></i></span>
-                            <input type="text" className="effect-21 form-control loginInputs" ref="loginusername" name="loginusername" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" required />
+                            <input type="text" className={this.state.loginusername ? "effect-21 form-control loginInputs has-content" : "effect-21 form-control loginInputs"} id="loginusername" ref="loginusername" name="loginusername" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" required />
                             <label>Email Id<span className="astrikReq">*</span></label>
                             <span className="focus-border">
                               <i></i> 
@@ -203,7 +210,7 @@ export default class Login extends TrackerReact(Component) {
                         <div className="form-group col-lg-12 col-md-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div className="input-effect input-group">
                             <span className="input-group-addon addons" id="basic-addon1"><i className="fa fa-lock" aria-hidden="true"></i></span>
-                            <input type="password" className="effect-21 form-control loginInputs" ref="loginPassword" name="loginPassword" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" required/>
+                            <input type="password" className="effect-21 form-control loginInputs" id="loginPassword" ref="loginPassword" name="loginPassword" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" required/>
                             <label>Password<span className="astrikReq">*</span></label>
                             <span className="focus-border">
                               <i></i>

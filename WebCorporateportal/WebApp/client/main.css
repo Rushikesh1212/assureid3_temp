@@ -1,15 +1,10 @@
 
 /*Swal CSS*/
 .swal-title {
-  font-size: 16px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
-  /* background-color: #1b1c20 !important;*/
   background-color: #00b8ff !important;
-  height: 63px;
-  color:#00b8ff;
   margin-top: -15px !important;
-  border-top-left-radius: 5px !important;
-  border-top-right-radius: 5px !important;
+  color:#ffffff;
+  font-size: 18px;
 }
 .swal-text {
     padding: 17px;

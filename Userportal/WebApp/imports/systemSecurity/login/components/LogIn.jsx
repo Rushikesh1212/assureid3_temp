@@ -209,7 +209,7 @@ export default class LogIn extends TrackerReact(Component) {
                       <h2>Sign In</h2>
                     </div>
                     <div className="FormWrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <form className="" id="login" onSubmit={this.userlogin.bind(this)}>
+                      <form className="" id="login" autoComplete="off" onSubmit={this.userlogin.bind(this)}>
                         <div className="form-group col-lg-12 col-md-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div className="input-effect input-group">
                             <span className="input-group-addon addons" id="basic-addon1"><i className="fa fa-user" aria-hidden="true"></i></span>

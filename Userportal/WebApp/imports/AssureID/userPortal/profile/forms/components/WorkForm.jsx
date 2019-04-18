@@ -621,7 +621,7 @@ class WorkForm extends TrackerReact(Component){
         $(event.target).parent().siblings('.fileName').css({'display':'block','marginTop':'1px','marginBottom':'0px'});
         $(event.target).parent().siblings('.fileName').siblings('.nopadLeft').css('marginTop','0px');
         $(event.target).parent().siblings('.fileName').find('label').html(file.name);
-        if(ext=="pdf" || ext=="jpg" || ext=="png" || ext=="jpeg"){
+        if( ext=="jpg" || ext=="png" || ext=="jpeg" || ext=="JPG" || ext=="PNG" || ext=="JPEG"){
           if(fileSize < size){
             $(event.target).parent().siblings('.employementProgressDiv').children('#errorProofEmp').removeClass('error');
             $(event.target).parent().siblings('.employementProgressDiv').children('#errorProofEmp').html('');
@@ -631,8 +631,9 @@ class WorkForm extends TrackerReact(Component){
           }else{
             $(event.target).parent().siblings('.employementProgressDiv').css('display','block');
             $(event.target).parent().siblings('.employementProgressDiv').children('#errorProofEmp').addClass('error');
-            $(event.target).parent().siblings('.employementProgressDiv').children('#errorProofEmp').html('<p>Only jpg, png, pdf format is supported.</p>');
+            $(event.target).parent().siblings('.employementProgressDiv').children('#errorProofEmp').html('<p>Only jpg, png format is supported.</p>');
             $(event.target).parent().siblings('.employementProgressDiv').children('#errorProofEmp').css({'color':'#e40b0b','fontSize':'13px'});
+            $(event.target).parent().siblings('.fileName').find('label').html("");
           }
         }
       }

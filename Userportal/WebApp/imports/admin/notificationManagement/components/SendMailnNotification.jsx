@@ -14,7 +14,7 @@ sendMailNotification = function(inputObj) {
 
 	var fromId 	= getMailId(inputObj.from);
 	var to 		  = getMailId(inputObj.to);  
-	var subject	= getSubject(inputObj.templateName);
+	var subject   = getSubject(inputObj.templateName);
 	var body	  = getMessageContent(inputObj.templateName,inputObj.variables);
 
 	// console.log("from: "+fromId);

@@ -635,7 +635,7 @@ class AddressForm extends TrackerReact(Component){
           $(event.target).parent().siblings('.fileName').siblings('.nopadLeft').css('marginTop','0px');
           $(event.target).parent().siblings('.fileName').find('label').html(file.name);
         }
-        if(ext=="pdf" || ext=="jpg" || ext=="png" || ext=="jpeg"){
+        if( ext=="jpg" || ext=="png" || ext=="jpeg" || ext=="JPG" || ext=="PNG" || ext=="JPEG"){
           if(fileSize < size){ 
             addProofToS3Function(userId,file,prooftype,proofSubtype,self);   
             if(proofSubtype == "permanentAddress"){
@@ -657,29 +657,34 @@ class AddressForm extends TrackerReact(Component){
               $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').addClass('error');
               $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').html('<p>Document size should not exceed file size limit 2MB.</p>');
               $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').css({'color':'#e40b0b','fontSize':'13px'});
+              $(event.target).parent().siblings('.fileName').find('label').html("");            
             }else{
               $(event.target).parent().parent().find('.currAddrselWidth').addClass('col-lg-12');
               $(event.target).parent().siblings('.perAddrProgressDiv').children('#currAddrErrorProof').addClass('error');
               $(event.target).parent().siblings('.perAddrProgressDiv').children('#currAddrErrorProof').html('<p>Document size should not exceed file size limit 2MB.</p>');
               $(event.target).parent().siblings('.perAddrProgressDiv').children('#currAddrErrorProof').css({'color':'#e40b0b','fontSize':'13px'});
+              $(event.target).parent().siblings('.fileName').find('label').html("");
             }
           } 
-        }else{
+        }else{  
           $(event.target).parent().siblings('.perAddrProgressDiv').css('display','block');
           if(proofSubtype == "permanentAddress"){
             $(event.target).parent().parent().find('.perAddrselWidth').addClass('col-lg-12');
             $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').addClass('error');
-            $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').html('<p>Only jpg, png, pdf format is supported.</p>');
+            $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').html('<p>Only jpg, png format is supported.</p>');
             $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').css({'color':'#e40b0b','fontSize':'13px'});
+            $(event.target).parent().siblings('.fileName').find('label').html("");
           }else{
             $(event.target).parent().parent().find('.currAddrselWidth').addClass('col-lg-12');
             $(event.target).parent().siblings('.perAddrProgressDiv').children('#currAddrErrorProof').addClass('error');
-            $(event.target).parent().siblings('.perAddrProgressDiv').children('#currAddrErrorProof').html('<p>Only jpg, png, pdf format is supported.</p>');
+            $(event.target).parent().siblings('.perAddrProgressDiv').children('#currAddrErrorProof').html('<p>Only jpg, png format is supported.</p>');
             $(event.target).parent().siblings('.perAddrProgressDiv').children('#currAddrErrorProof').css({'color':'#e40b0b','fontSize':'13px'});
+            $(event.target).parent().siblings('.fileName').find('label').html("");
           }
         }
       }
     }
+    event.target.value = "";  
   }
   removeProofDocs(event){
     event.preventDefault();
@@ -952,7 +957,7 @@ class AddressForm extends TrackerReact(Component){
                     </div>
                   </div>
                   <div className="form-group col-lg-4 col-md-3 col-sm-4 col-xs-4 nopadLeft perAddrBrowseButton">
-                    <input type="file" className="btn btn-info inputFiles" name="inputFile" data-subtype="permanentAddress" onChange={this.uploadProofDocs.bind(this)}/>
+                    <input type="file" className="btn btn-info inputFiles" id="inputFile" name="inputFile" data-subtype="permanentAddress" onChange={this.uploadProofDocs.bind(this)}/>
                     <button type="button" className="btn btn-info col-lg-12 col-md-12 col-sm-12 col-xs-12 inputFileButton" data-subtype="permanentAddress" onClick={this.inputFileChange.bind(this)}>Browse</button>
                   </div>
                   <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 proofDocsProgress perAddrProgressDiv" style={{display: "none"}}>

@@ -62,7 +62,13 @@ export default class ResetPassword extends TrackerReact(React.Component){
             Meteor.logout();
             $('#ResetBlock').hide();
             $('#outerLoginWrapper').show();
-            swal("Password has been changed successfully!!");
+             swal({
+              title: "Reset Password",
+              text: "Password has been changed successfully!!",
+              timer: 3000,
+              showConfirmButton: false,
+              type: "success"
+            });
           }
         });
       }

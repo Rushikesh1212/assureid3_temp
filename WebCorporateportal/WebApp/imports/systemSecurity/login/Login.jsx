@@ -51,7 +51,7 @@ export default class Login extends TrackerReact(Component) {
                       Meteor.loginWithPassword(email, passwordVar, function(error) {
                         if (error) {
                           swal({
-                            title: "abc",
+                            title: "Email id or Password is wrong",
                             text: "Email id or Password is wrong! Please try again.",
                             timer: 3000,
                             showConfirmButton: false,
@@ -76,7 +76,7 @@ export default class Login extends TrackerReact(Component) {
                              }
                           }else{
                             swal({
-                                title: "abc",
+                                title: "Not Authorized",
                                 text: "You are not authorize person to SIGN IN in this system!",
                                 timer: 3000,
                                 showConfirmButton: false,
@@ -91,7 +91,7 @@ export default class Login extends TrackerReact(Component) {
                       });
                     }else{
                       swal({
-                        title: "abc",
+                        title: "Not Matched",
                         text: "Email Id and AssureID does not match. Please Check!",
                         timer: 3000,
                         showConfirmButton: false,
@@ -101,7 +101,7 @@ export default class Login extends TrackerReact(Component) {
                   });
                 }else if(data == "Blocked"){
                   swal({
-                    title: "abc",
+                    title: "Your profile is blocked",
                     text: "Your profile is blocked. Please contact with Admin!",
                     timer: 3000,
                     showConfirmButton: false,
@@ -109,7 +109,7 @@ export default class Login extends TrackerReact(Component) {
                   });
                 }else{
                   swal({
-                    title: "abc",
+                    title: "Specify Correct Email",
                     text: "Email id or Password is wrong. Please try again!",
                     timer: 3000,
                     showConfirmButton: false, 
@@ -119,7 +119,7 @@ export default class Login extends TrackerReact(Component) {
               });  
             }else if(data == "unverified"){
               swal({
-                title: "abc",
+                title: "Not Verified",
                 text: "Your Account is not verified. Please click on 'OK' button to verify now!",
                 showConfirmButton: true,
                 type: "error"
@@ -128,7 +128,7 @@ export default class Login extends TrackerReact(Component) {
               $('#OtpBlock').show();
             }else{
               swal({
-                title: "abc",
+                title: "Not Exist",
                 text: "Email Id does not exist. Please contact system admin!",
                 timer: 3000,
                 showConfirmButton: false,
@@ -141,7 +141,7 @@ export default class Login extends TrackerReact(Component) {
         }
       }else{
          swal({
-            title: "abc",
+            title: "Not Exist",
             text: "AssureID does not exist. Please correct it!",
             timer: 3000,
             showConfirmButton: false,
@@ -186,11 +186,11 @@ export default class Login extends TrackerReact(Component) {
                       <h2>Sign In</h2>
                     </div>
                     <div className="FormWrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <form className="" id="login" onSubmit={this.userlogin.bind(this)}>
+                      <form className="" autoComplete="off" id="login" onSubmit={this.userlogin.bind(this)}>
                         <div className="form-group col-lg-12 col-md-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div className="input-effect input-group">
                             <span className="input-group-addon addons" id="basic-addon1"><i className="fa fa-address-book" aria-hidden="true"></i></span>
-                            <input type="text" className="effect-21 form-control loginInputs" ref="loginassureId" name="loginassureId" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" required/>
+                            <input type="text" className="effect-21 form-control loginInputs" ref="loginassureId" name="loginassureId" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" autoFocus required/>
                             <label>AssureID<span className="astrikReq">*</span></label>
                             <span className="focus-border">
                               <i></i>
@@ -200,7 +200,7 @@ export default class Login extends TrackerReact(Component) {
                         <div className="form-group col-lg-12 col-md-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div className="input-effect input-group">
                             <span className="input-group-addon addons" id="basic-addon1"><i className="fa fa-user" aria-hidden="true"></i></span>
-                            <input type="text" className="effect-21 form-control loginInputs" ref="loginusername" name="loginusername" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" required/>
+                            <input type="text" className="effect-21 form-control loginInputs" ref="loginusername" name="loginusername" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" autoFocus required/>
                             <label>Email Id<span className="astrikReq">*</span></label>
                             <span className="focus-border">
                               <i></i>
@@ -210,7 +210,7 @@ export default class Login extends TrackerReact(Component) {
                         <div className="form-group col-lg-12 col-md-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div className="input-effect input-group">
                             <span className="input-group-addon addons" id="basic-addon1"><i className="fa fa-lock" aria-hidden="true"></i></span>
-                            <input type="password" className="effect-21 form-control loginInputs" ref="loginPassword" name="loginPassword" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" required/>
+                            <input type="password" className="effect-21 form-control loginInputs" ref="loginPassword" name="loginPassword" onBlur={this.inputEffect.bind(this)} autoComplete="off" aria-label="Username" aria-describedby="basic-addon1" autoFocus required/>
                             <label>Password<span className="astrikReq">*</span></label>
                             <span className="focus-border">
                               <i></i>

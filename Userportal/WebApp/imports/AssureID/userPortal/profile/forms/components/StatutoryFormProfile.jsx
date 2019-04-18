@@ -257,7 +257,7 @@ export default class StatutoryFormProfile extends TrackerReact(React.Component){
         var ext = fileName.split('.').pop();
         $(event.target).parent().siblings('.FileDiv').css('display','block');
         $(event.target).parent().siblings('.FileDiv').find('label').html(file.name);
-        if(ext=="pdf" || ext=="jpg" || ext=="png" || ext=="jpeg"){
+        if( ext=="jpg" || ext=="png" || ext=="jpeg" || ext=="JPG" || ext=="PNG" || ext=="JPEG"){
           if(fileSize < size){
             $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').removeClass('error');
             $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').html('');
@@ -269,12 +269,14 @@ export default class StatutoryFormProfile extends TrackerReact(React.Component){
             $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').addClass('error');
             $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').html('<p>Document size should not exceed file size limit 2MB.</p>');
             $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').css({'color':'#e40b0b','fontSize':'13px'});
+            $(event.target).parent().siblings('.fileName').find('label').html("");
           } 
         }else{
           $(event.target).parent().siblings('.identityProofPro').css('display','block');
           $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').addClass('error');
-          $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').html('<p>Only jpg, png, pdf format is supported.</p>');
+          $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').html('<p>Only jpg, png format is supported.</p>');
           $(event.target).parent().siblings('.identityProofPro').find('#identyErrorList').css({'color':'#e40b0b','fontSize':'13px'});
+          $(event.target).parent().siblings('.fileName').find('label').html("");
         }
       }
     }

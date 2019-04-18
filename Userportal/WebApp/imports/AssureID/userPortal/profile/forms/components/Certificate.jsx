@@ -370,7 +370,7 @@ class Certificate extends TrackerReact(Component){
         $(event.target).parent().siblings('.profileName').css({'display':'block','marginTop':'1px','marginBottom':'0px','fontSize':'13px','fontWeight':'100',});
         $(event.target).parent().siblings('.profileName').siblings('.nopadLeft').css('marginTop','0px');
         $(event.target).parent().siblings('.profileName').find('label').html(file.name);
-        if(ext=="pdf" || ext=="jpg" || ext=="png" || ext=="jpeg"){
+        if( ext=="jpg" || ext=="png" || ext=="jpeg" || ext=="JPG" || ext=="PNG" || ext=="JPEG"){
           if(fileSize < size){
             $(event.target).parent().siblings('.educationProgressDiv').children('#errorProofProEdu').removeClass('error');
             $(event.target).parent().siblings('.educationProgressDiv').children('#errorProofProEdu').html('');
@@ -380,8 +380,9 @@ class Certificate extends TrackerReact(Component){
           }else{
             $(event.target).parent().siblings('.educationProgressDiv').css('display','block');
             $(event.target).parent().siblings('.educationProgressDiv').children('#errorProofProEdu').addClass('error');
-            $(event.target).parent().siblings('.educationProgressDiv').children('#errorProofProEdu').html('<p>Only jpg, png, pdf format is supported.</p>');
+            $(event.target).parent().siblings('.educationProgressDiv').children('#errorProofProEdu').html('<p>Only jpg, png format is supported.</p>');
             $(event.target).parent().siblings('.educationProgressDiv').children('#errorProofProEdu').css({'color':'#e40b0b','fontSize':'13px'});
+            $(event.target).parent().siblings('.fileName').find('label').html("");
           }
         }
       }

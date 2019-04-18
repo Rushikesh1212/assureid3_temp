@@ -285,7 +285,7 @@ export default class BasicForm extends TrackerReact(Component){
         $(event.target).parent().siblings('.fileNameDiv').css({'display':'block','marginTop':'1px','marginBottom':'0px'});
         $(event.target).parent().siblings('.fileNameDiv').siblings('.nopadLeft').css('marginTop','0px');
         $(event.target).parent().siblings('.fileNameDiv').find('label').html(file.name);
-        if(ext=="pdf" || ext=="jpg" || ext=="png" || ext=="jpeg"){
+        if( ext=="jpg" || ext=="png" || ext=="jpeg" || ext=="JPG" || ext=="PNG" || ext=="JPEG"){
           if(fileSize < size){
             $(event.target).parent().siblings('.basicProgressDiv').css('display','block');
             $(event.target).parent().siblings('.proofDocsProgress').children('#errorProofList').removeClass('error');
@@ -297,12 +297,14 @@ export default class BasicForm extends TrackerReact(Component){
             $(event.target).parent().siblings('.proofDocsProgress').children('#errorProofList').addClass('error');
             $(event.target).parent().siblings('.proofDocsProgress').children('#errorProofList').html('<p>Document size should not exceed file size limit 2MB.</p>');
             $(event.target).parent().siblings('.proofDocsProgress').children('#errorProofList').css({'color':'#e40b0b','fontSize':'13px'});
+            $(event.target).parent().siblings('.fileName').find('label').html("");
           } 
         }else{
           $(event.target).parent().siblings('.basicProgressDiv').css('display','block');
           $(event.target).parent().siblings('.proofDocsProgress').children('#errorProofList').addClass('error');
-          $(event.target).parent().siblings('.proofDocsProgress').children('#errorProofList').html('<p>Only jpg, png, pdf format is supported.</p>');
+          $(event.target).parent().siblings('.proofDocsProgress').children('#errorProofList').html('<p>Only jpg, png format is supported.</p>');
           $(event.target).parent().siblings('.proofDocsProgress').children('#errorProofList').css({'color':'#e40b0b','fontSize':'13px'});
+          $(event.target).parent().siblings('.fileName').find('label').html("");
         }
       }
     }    

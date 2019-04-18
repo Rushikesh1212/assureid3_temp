@@ -466,7 +466,7 @@ class PermanentAddress extends TrackerReact(Component){
         $(event.target).parent().siblings('.fileName').css({'display':'block','marginTop':'1px','marginBottom':'0px'});
         $(event.target).parent().siblings('.fileName').siblings('.nopadLeft').css('marginTop','0px');
         $(event.target).parent().siblings('.fileName').find('label').html(file.name);
-        if(ext=="pdf" || ext=="jpg" || ext=="png" || ext=="jpeg"){
+        if(ext=="jpg" || ext=="png" || ext=="jpeg" || ext=="JPG" || ext=="PNG" || ext=="JPEG"){
           if(fileSize < size){ 
             addProofToS3Function(userId,file,prooftype,proofSubtype,self);   
             $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').removeClass('error');
@@ -480,13 +480,15 @@ class PermanentAddress extends TrackerReact(Component){
             $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').html('<p>Document size should not exceed file size limit 2MB.</p>');
             $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').css({'color':'#e40b0b','fontSize':'13px'}); 
             $(event.target).parent().siblings('.perAddrProgressDiv').css('display','block');
+            $(event.target).parent().siblings('.fileName').find('label').html("");
           } 
         }else{
           $(event.target).parent().parent().find('.perAddrselWidth').addClass('col-lg-12');
           $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').addClass('error');
-          $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').html('<p>Only jpg, png, pdf format is supported.</p>');
+          $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').html('<p>Only jpg, png format is supported.</p>');
           $(event.target).parent().siblings('.perAddrProgressDiv').children('#perAddrErrorProof').css({'color':'#e40b0b','fontSize':'13px'});
           $(event.target).parent().siblings('.perAddrProgressDiv').css('display','block');
+          $(event.target).parent().siblings('.fileName').find('label').html("");
         }
       }
     }

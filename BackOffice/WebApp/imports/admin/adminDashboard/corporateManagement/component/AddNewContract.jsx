@@ -165,7 +165,8 @@ class AddNewContract extends TrackerReact(Component) {
            title: 'Only .pdf files are allowed',       
            showConfirmButton: false,      
            timer: 3000      
-         });   
+         }); 
+         event.target.value = "";  
       }
     }
   }
@@ -201,7 +202,8 @@ class AddNewContract extends TrackerReact(Component) {
            title: 'Only .pdf files are allowed',       
            showConfirmButton: false,      
            timer: 3000      
-         });   
+         }); 
+         event.target.value = "";  
       }
     }
   }
@@ -236,7 +238,9 @@ class AddNewContract extends TrackerReact(Component) {
            title: 'Only .pdf files are allowed',       
            showConfirmButton: false,      
            timer: 3000      
-         });   
+         });  
+        event.target.value = "";  
+ 
       }
     }
   }
